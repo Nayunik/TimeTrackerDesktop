@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TimeTrackerDesktop
 {
-    public partial class Form1 : Form
+    public partial class FormAuth : Form
     {
-        public Form1()
+        public FormAuth()
         {
             InitializeComponent();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
