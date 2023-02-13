@@ -36,12 +36,21 @@ namespace TimeTrackerDesktop
         {
             if (!dataBase.isConnectToDB(configurationString))
             {
-                MessageBox.Show(dataBase.GetMsg);
+                MessageBox.Show(dataBase.GetMsg + "\r\n Проверьте верность данных в строке для подключения к Базе данных!"); 
+                Application.Exit(); //Если подключение не состоялось, то необходимо закрыть приложение.
             }
             else
             {
                 MessageBox.Show(dataBase.GetMsg);
             }
+        }
+
+        private void labelGoToRegForm_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormRegister reg = new FormRegister();
+            reg.Owner = this;
+            reg.ShowDialog();
         }
     }
 }

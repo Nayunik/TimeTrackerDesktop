@@ -123,6 +123,7 @@
             this.labelGoToRegForm.TabIndex = 3;
             this.labelGoToRegForm.Text = "Еще нет учетной записи?";
             this.labelGoToRegForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelGoToRegForm.Click += new System.EventHandler(this.labelGoToRegForm_Click);
             // 
             // label3
             // 
