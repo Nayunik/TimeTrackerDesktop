@@ -35,12 +35,17 @@
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
+            this.buttonStartStopTimer = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.buttonStartStopTimer);
             this.panel1.Location = new System.Drawing.Point(201, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(587, 548);
@@ -93,6 +98,29 @@
             this.buttonGoToAdminForm.Text = "Открыть окно администратора";
             this.buttonGoToAdminForm.UseVisualStyleBackColor = true;
             // 
+            // buttonStartStopTimer
+            // 
+            this.buttonStartStopTimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStartStopTimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonStartStopTimer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonStartStopTimer.Location = new System.Drawing.Point(489, 12);
+            this.buttonStartStopTimer.Name = "buttonStartStopTimer";
+            this.buttonStartStopTimer.Size = new System.Drawing.Size(58, 34);
+            this.buttonStartStopTimer.TabIndex = 10;
+            this.buttonStartStopTimer.Text = "Старт";
+            this.buttonStartStopTimer.UseVisualStyleBackColor = true;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox8.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox8.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBox8.Location = new System.Drawing.Point(145, 12);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(338, 34);
+            this.textBox8.TabIndex = 20;
+            // 
             // FormTimeTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +135,8 @@
             this.Name = "FormTimeTracker";
             this.Text = "Учет времени";
             this.Load += new System.EventHandler(this.FormTimeTracker_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -120,5 +150,7 @@
         private System.Windows.Forms.Button buttonAutoHideMod;
         private System.Windows.Forms.Button buttonAutoMod;
         private System.Windows.Forms.Button buttonGoToAdminForm;
+        private System.Windows.Forms.Button buttonStartStopTimer;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
