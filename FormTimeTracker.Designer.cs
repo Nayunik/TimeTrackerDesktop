@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxNameForTimeline = new System.Windows.Forms.TextBox();
+            this.buttonStartStopTimer = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonGoToAdminForm = new System.Windows.Forms.Button();
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
-            this.buttonGoToAdminForm = new System.Windows.Forms.Button();
-            this.buttonStartStopTimer = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.labelTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -44,12 +45,41 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.labelTime);
+            this.panel1.Controls.Add(this.textBoxNameForTimeline);
             this.panel1.Controls.Add(this.buttonStartStopTimer);
             this.panel1.Location = new System.Drawing.Point(201, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(587, 548);
             this.panel1.TabIndex = 3;
+            // 
+            // textBoxNameForTimeline
+            // 
+            this.textBoxNameForTimeline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxNameForTimeline.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxNameForTimeline.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxNameForTimeline.Location = new System.Drawing.Point(145, 12);
+            this.textBoxNameForTimeline.Multiline = true;
+            this.textBoxNameForTimeline.Name = "textBoxNameForTimeline";
+            this.textBoxNameForTimeline.Size = new System.Drawing.Size(338, 34);
+            this.textBoxNameForTimeline.TabIndex = 20;
+            // 
+            // buttonStartStopTimer
+            // 
+            this.buttonStartStopTimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonStartStopTimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonStartStopTimer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonStartStopTimer.Location = new System.Drawing.Point(489, 12);
+            this.buttonStartStopTimer.Name = "buttonStartStopTimer";
+            this.buttonStartStopTimer.Size = new System.Drawing.Size(58, 34);
+            this.buttonStartStopTimer.TabIndex = 10;
+            this.buttonStartStopTimer.Text = "Старт";
+            this.buttonStartStopTimer.UseVisualStyleBackColor = true;
+            this.buttonStartStopTimer.Click += new System.EventHandler(this.buttonStartStopTimer_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel2
             // 
@@ -61,6 +91,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(183, 545);
             this.panel2.TabIndex = 9;
+            // 
+            // buttonGoToAdminForm
+            // 
+            this.buttonGoToAdminForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGoToAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGoToAdminForm.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGoToAdminForm.Location = new System.Drawing.Point(6, 488);
+            this.buttonGoToAdminForm.Name = "buttonGoToAdminForm";
+            this.buttonGoToAdminForm.Size = new System.Drawing.Size(171, 54);
+            this.buttonGoToAdminForm.TabIndex = 9;
+            this.buttonGoToAdminForm.Text = "Открыть окно администратора";
+            this.buttonGoToAdminForm.UseVisualStyleBackColor = true;
             // 
             // buttonAutoHideMod
             // 
@@ -86,40 +128,15 @@
             this.buttonAutoMod.Text = "Автоматический режим";
             this.buttonAutoMod.UseVisualStyleBackColor = true;
             // 
-            // buttonGoToAdminForm
+            // labelTime
             // 
-            this.buttonGoToAdminForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonGoToAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGoToAdminForm.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGoToAdminForm.Location = new System.Drawing.Point(6, 488);
-            this.buttonGoToAdminForm.Name = "buttonGoToAdminForm";
-            this.buttonGoToAdminForm.Size = new System.Drawing.Size(171, 54);
-            this.buttonGoToAdminForm.TabIndex = 9;
-            this.buttonGoToAdminForm.Text = "Открыть окно администратора";
-            this.buttonGoToAdminForm.UseVisualStyleBackColor = true;
-            // 
-            // buttonStartStopTimer
-            // 
-            this.buttonStartStopTimer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonStartStopTimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonStartStopTimer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonStartStopTimer.Location = new System.Drawing.Point(489, 12);
-            this.buttonStartStopTimer.Name = "buttonStartStopTimer";
-            this.buttonStartStopTimer.Size = new System.Drawing.Size(58, 34);
-            this.buttonStartStopTimer.TabIndex = 10;
-            this.buttonStartStopTimer.Text = "Старт";
-            this.buttonStartStopTimer.UseVisualStyleBackColor = true;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox8.Location = new System.Drawing.Point(145, 12);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(338, 34);
-            this.textBox8.TabIndex = 20;
+            this.labelTime.AutoSize = true;
+            this.labelTime.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTime.Location = new System.Drawing.Point(12, 13);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(119, 33);
+            this.labelTime.TabIndex = 21;
+            this.labelTime.Text = "00:00:00";
             // 
             // FormTimeTracker
             // 
@@ -151,6 +168,7 @@
         private System.Windows.Forms.Button buttonAutoMod;
         private System.Windows.Forms.Button buttonGoToAdminForm;
         private System.Windows.Forms.Button buttonStartStopTimer;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxNameForTimeline;
+        private System.Windows.Forms.Label labelTime;
     }
 }
