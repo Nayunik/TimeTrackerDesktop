@@ -25,10 +25,6 @@ namespace TimeTrackerDesktop
             this.Owner.Show();
         }
 
-        private void FormRegister_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
 
         private void FormRegister_FormClosed(object sender, FormClosedEventArgs e)
         {

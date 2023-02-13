@@ -308,7 +308,6 @@
             this.MaximizeBox = false;
             this.Name = "FormRegister";
             this.Text = "Регистрация";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegister_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRegister_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
