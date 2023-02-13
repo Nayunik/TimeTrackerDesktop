@@ -103,6 +103,7 @@
             this.buttonGoToAdminForm.TabIndex = 9;
             this.buttonGoToAdminForm.Text = "Открыть окно администратора";
             this.buttonGoToAdminForm.UseVisualStyleBackColor = true;
+            this.buttonGoToAdminForm.Click += new System.EventHandler(this.buttonGoToAdminForm_Click);
             // 
             // buttonAutoHideMod
             // 

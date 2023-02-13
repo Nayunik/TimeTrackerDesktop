@@ -38,7 +38,6 @@
             this.ColumnMiddlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonDeleteBlock = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
-            this.labelGoToTimeTrackerForm = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +58,6 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.buttonDeleteBlock);
             this.panel1.Controls.Add(this.buttonChange);
-            this.panel1.Controls.Add(this.labelGoToTimeTrackerForm);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(611, 517);
@@ -130,18 +128,6 @@
             this.buttonChange.Text = "Редактировать";
             this.buttonChange.UseVisualStyleBackColor = true;
             // 
-            // labelGoToTimeTrackerForm
-            // 
-            this.labelGoToTimeTrackerForm.AutoSize = true;
-            this.labelGoToTimeTrackerForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelGoToTimeTrackerForm.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelGoToTimeTrackerForm.Location = new System.Drawing.Point(409, 487);
-            this.labelGoToTimeTrackerForm.Name = "labelGoToTimeTrackerForm";
-            this.labelGoToTimeTrackerForm.Size = new System.Drawing.Size(192, 15);
-            this.labelGoToTimeTrackerForm.TabIndex = 3;
-            this.labelGoToTimeTrackerForm.Text = "Перейти к окну учета времени";
-            this.labelGoToTimeTrackerForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,7 +141,6 @@
             this.Name = "FormAdmin";
             this.Text = "Администрирование";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -167,7 +152,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonDeleteBlock;
         private System.Windows.Forms.Button buttonChange;
-        private System.Windows.Forms.Label labelGoToTimeTrackerForm;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLogin;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLastname;
