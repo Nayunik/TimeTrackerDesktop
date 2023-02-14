@@ -37,7 +37,7 @@ namespace TimeTrackerDesktop
             if (!dataBase.isConnectToDB(configurationString))
             {
                 MessageBox.Show(dataBase.GetMsg + "\r\n Проверьте верность данных в строке для подключения к Базе данных!"); 
-                Application.Exit(); //Если подключение не состоялось, то необходимо закрыть приложение.
+                Application.Exit(); //Если подключение не состоялось, то необходимо закрыть приложение. Тестим, делаю изменение))
             }
             else
             {
