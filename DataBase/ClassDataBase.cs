@@ -17,28 +17,27 @@ namespace TimeTrackerDesktop.DataBase
         public string ConfigurationToConnect { get => configurationToConnect; set => configurationToConnect = value; }
         public string GetMsg { get => msg; }
 
-        public bool isConnectToDB(string configurationToConnect)
+        public NpgsqlConnection ConnectToDB(string configurationToConnect)
         {
             try
             {
                 this.connection = new NpgsqlConnection(configurationToConnect);
                 this.connection.Open();
-                msg = "Connection is ready";
-                return true;
+                return this.connection;
                 
             }
             catch
             {
                 SystemException e = new SystemException();
                 this.msg = (string)e.Message;
-                return false;
+                return null;
             }
 
         }
 
         public NpgsqlDataReader FunctionUsing (string nameOfFunction)
         {
-            if (nameOfFunction == null || nameOfFunction == "") 
+            if (string.IsNullOrEmpty(nameOfFunction)) 
             {
                 return null;
             }
