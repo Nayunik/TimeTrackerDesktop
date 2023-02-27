@@ -31,6 +31,11 @@ namespace TimeTrackerDesktop.AuthClasses
         public string Login { get => login; set => login = value; }
         public string Password { get => password; set => password = value; }
 
+        /*public bool UserIsExists (string login, string password)
+        {
+
+        }
+*/
 
     }
 }

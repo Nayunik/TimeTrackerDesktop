@@ -36,6 +36,18 @@ namespace TimeTrackerDesktop.DataBase
 
         }
 
+        public NpgsqlDataReader FunctionUsing (string nameOfFunction)
+        {
+            if (nameOfFunction == null || nameOfFunction == "") 
+            {
+                return null;
+            }
+            else
+            {
+                var command = new NpgsqlCommand("select * from " + nameOfFunction, this.connection);
+                return command.ExecuteReader();
+            }
+        }
         
 
  

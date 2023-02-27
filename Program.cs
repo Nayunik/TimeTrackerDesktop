@@ -16,7 +16,7 @@ namespace TimeTrackerDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTimeTracker());
+            Application.Run(new FormAuth());
         }
     }
 }
