@@ -27,12 +27,16 @@ namespace TimeTrackerDesktop.AuthClasses
         {
             this.dataBase = dataBase;
             this.userId = GetUserId(login, password);
+            this.disabled = UserIsActive(login, password);
+
             if (userId != -1)
             {
                 this.login = login;
                 this.password = password;
 
                 //Необходимо доделать извлечение данных о пользователе при помощи его id, для этого нужно реализовать скрипт по извлечению данных.
+                var resultFunction = dataBase.FunctionUsing("main.get_user_info(\'" + this.userId + "\')");
+
             }
         }
 

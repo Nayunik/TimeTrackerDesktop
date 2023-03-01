@@ -29,11 +29,9 @@ namespace TimeTrackerDesktop
             string password = textBox2.Text;
             ClassUserAuht user = new ClassUserAuht(login, password, dataBase);
 
-            int userId = user.GetUserId(login, password);
-
-            if (userId != -1)
+            if (user.UserId != -1)
             {
-                if(user.UserIsActive(login, password))
+                if(user.Disabled)
                 {
                     MessageBox.Show("Пользователь не заблокирован!");
                     // Тут необходимо сделать открытие формы для работы с таймером с проверкой на наличие ролей.
