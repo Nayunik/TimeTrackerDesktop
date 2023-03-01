@@ -15,8 +15,8 @@ namespace TimeTrackerDesktop.AuthClasses
         private string middlename;
         private string phone;
         private string email;
-        private bool disabled;
-        private List<int> roles;
+        private bool isActive;
+        private List<int> roles = new List<int>();
 
         private string login;
         private string password;
@@ -27,16 +27,28 @@ namespace TimeTrackerDesktop.AuthClasses
         {
             this.dataBase = dataBase;
             this.userId = GetUserId(login, password);
-            this.disabled = UserIsActive(login, password);
+            this.isActive = UserIsActive(login, password);
 
             if (userId != -1)
             {
                 this.login = login;
                 this.password = password;
 
-                //Необходимо доделать извлечение данных о пользователе при помощи его id, для этого нужно реализовать скрипт по извлечению данных.
-                var resultFunction = dataBase.FunctionUsing("main.get_user_info(\'" + this.userId + "\')");
+                var resultFunction = dataBase.FunctionUsing("main.get_user_info(" + this.userId + ")");
+                resultFunction.Read();
+                this.firstname = resultFunction.GetString(0);
+                this.lastname = resultFunction.GetString(1);
+                this.middlename = resultFunction.GetString(2);
+                this.phone = resultFunction.GetString(3);
+                this.email = resultFunction.GetString(4);
+                resultFunction.Close();
 
+                resultFunction = dataBase.FunctionUsing("main.get_user_roles(" + this.userId + ")");
+                while (resultFunction.Read())
+                {
+                    this.roles.Add(resultFunction.GetInt32(0));
+                }
+                resultFunction.Close();
             }
         }
 
@@ -45,7 +57,7 @@ namespace TimeTrackerDesktop.AuthClasses
         public string Middlename { get => middlename; set => middlename = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Email { get => email; set => email = value; }
-        public bool Disabled { get => disabled; set => disabled = value; }
+        public bool IsActive { get => isActive; set => isActive = value; }
         public List<int> Roles { get => roles; set => roles = value; }
         public string Login { get => login; set => login = value; }
         public string Password { get => password; set => password = value; }
