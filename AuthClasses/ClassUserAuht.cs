@@ -7,7 +7,7 @@ using TimeTrackerDesktop.DataBase;
 
 namespace TimeTrackerDesktop.AuthClasses
 {
-    internal class ClassUserAuht
+    public class ClassUserAuht
     {
         private int userId;
         private string firstname;

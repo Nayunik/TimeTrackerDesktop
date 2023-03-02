@@ -33,7 +33,20 @@ namespace TimeTrackerDesktop
             {
                 if(user.IsActive)
                 {
-                   // Тут необходимо сделать открытие формы для работы с таймером с проверкой на наличие ролей (нужно делать недоступными кнопки, если нет ролей).
+                    if (user.Roles.Contains(2))
+                    {
+                        // Тут необходимо сделать открытие формы для работы с таймером с проверкой на наличие ролей (нужно делать недоступными кнопки, если нет ролей).
+                        this.Hide();
+                        FormTimeTracker formTime = new FormTimeTracker();
+                        formTime.SetUser(user);
+                        formTime.SetDB(dataBase);
+                        formTime.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("У вас нет прав для работы с приложением, обратитесь к администратору приложения!");
+                    }
                 }
                 else
                 {

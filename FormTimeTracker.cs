@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TimeTrackerDesktop.AuthClasses;
+using TimeTrackerDesktop.DataBase;
 
 namespace TimeTrackerDesktop
 {
@@ -18,6 +20,11 @@ namespace TimeTrackerDesktop
         private DateTime endTime;
         private TimeSpan time;
 
+        private ClassUserAuht user;
+        private ClassDataBase database;
+
+        public int userId;
+
         public FormTimeTracker()
         {
             InitializeComponent();
@@ -25,7 +32,18 @@ namespace TimeTrackerDesktop
 
         private void FormTimeTracker_Load(object sender, EventArgs e)
         {
-            
+            if (!user.Roles.Contains(1))
+            {
+                buttonGoToAdminForm.Visible = false;
+            }
+            if (!user.Roles.Contains(3))
+            {
+                buttonCreateReport.Visible = false;
+            }
+            if(!user.Roles.Contains(4))
+            {
+                buttonCreateGraphic.Visible = false;
+            }
         }
 
         private void buttonStartStopTimer_Click(object sender, EventArgs e)
@@ -78,6 +96,14 @@ namespace TimeTrackerDesktop
             formAdmin.ShowDialog();
             formAdmin.Focus();
             formAdmin.Owner= this; 
+        }
+        public void SetUser(ClassUserAuht _user)
+        {
+            this.user = _user;
+        }
+        public void SetDB(ClassDataBase _db)
+        {
+            this.database = _db;
         }
     }
 }

@@ -8,7 +8,7 @@ using Npgsql;
 
 namespace TimeTrackerDesktop.DataBase
 {
-    internal class ClassDataBase
+    public class ClassDataBase
     {
         private string configurationToConnect;
         private NpgsqlConnection connection;
