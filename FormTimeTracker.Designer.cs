@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTime = new System.Windows.Forms.Label();
             this.textBoxNameForTimeline = new System.Windows.Forms.TextBox();
             this.buttonStartStopTimer = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -37,15 +43,11 @@
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
-            this.labelTime = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCreateGraphic = new System.Windows.Forms.Button();
+            this.buttonCreateReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,6 +61,58 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 548);
             this.panel1.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnDate,
+            this.ColumnName,
+            this.ColumnStartTime,
+            this.ColumnEndTime});
+            this.dataGridView1.Location = new System.Drawing.Point(18, 52);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 20;
+            this.dataGridView1.Size = new System.Drawing.Size(540, 490);
+            this.dataGridView1.TabIndex = 22;
+            // 
+            // ColumnDate
+            // 
+            this.ColumnDate.HeaderText = "Дата";
+            this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Наименование";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 220;
+            // 
+            // ColumnStartTime
+            // 
+            this.ColumnStartTime.HeaderText = "Начало";
+            this.ColumnStartTime.Name = "ColumnStartTime";
+            this.ColumnStartTime.ReadOnly = true;
+            // 
+            // ColumnEndTime
+            // 
+            this.ColumnEndTime.HeaderText = "Конец";
+            this.ColumnEndTime.Name = "ColumnEndTime";
+            this.ColumnEndTime.ReadOnly = true;
+            // 
+            // labelTime
+            // 
+            this.labelTime.AutoSize = true;
+            this.labelTime.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTime.Location = new System.Drawing.Point(12, 8);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(119, 33);
+            this.labelTime.TabIndex = 21;
+            this.labelTime.Text = "00:00:00";
             // 
             // textBoxNameForTimeline
             // 
@@ -92,6 +146,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.buttonCreateReport);
+            this.panel2.Controls.Add(this.buttonCreateGraphic);
             this.panel2.Controls.Add(this.buttonGoToAdminForm);
             this.panel2.Controls.Add(this.buttonAutoHideMod);
             this.panel2.Controls.Add(this.buttonAutoMod);
@@ -137,57 +193,29 @@
             this.buttonAutoMod.Text = "Автоматический режим";
             this.buttonAutoMod.UseVisualStyleBackColor = true;
             // 
-            // labelTime
+            // buttonCreateGraphic
             // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTime.Location = new System.Drawing.Point(12, 8);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(119, 33);
-            this.labelTime.TabIndex = 21;
-            this.labelTime.Text = "00:00:00";
+            this.buttonCreateGraphic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCreateGraphic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCreateGraphic.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 238);
+            this.buttonCreateGraphic.Name = "buttonCreateGraphic";
+            this.buttonCreateGraphic.Size = new System.Drawing.Size(171, 54);
+            this.buttonCreateGraphic.TabIndex = 10;
+            this.buttonCreateGraphic.Text = "Сформировать график";
+            this.buttonCreateGraphic.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // buttonCreateReport
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnDate,
-            this.ColumnName,
-            this.ColumnStartTime,
-            this.ColumnEndTime});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 490);
-            this.dataGridView1.TabIndex = 22;
-            // 
-            // ColumnDate
-            // 
-            this.ColumnDate.HeaderText = "Дата";
-            this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Наименование";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 220;
-            // 
-            // ColumnStartTime
-            // 
-            this.ColumnStartTime.HeaderText = "Начало";
-            this.ColumnStartTime.Name = "ColumnStartTime";
-            this.ColumnStartTime.ReadOnly = true;
-            // 
-            // ColumnEndTime
-            // 
-            this.ColumnEndTime.HeaderText = "Конец";
-            this.ColumnEndTime.Name = "ColumnEndTime";
-            this.ColumnEndTime.ReadOnly = true;
+            this.buttonCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCreateReport.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCreateReport.Location = new System.Drawing.Point(6, 298);
+            this.buttonCreateReport.Name = "buttonCreateReport";
+            this.buttonCreateReport.Size = new System.Drawing.Size(171, 54);
+            this.buttonCreateReport.TabIndex = 11;
+            this.buttonCreateReport.Text = "Сформировать отчет";
+            this.buttonCreateReport.UseVisualStyleBackColor = true;
             // 
             // FormTimeTracker
             // 
@@ -205,8 +233,8 @@
             this.Load += new System.EventHandler(this.FormTimeTracker_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,5 +255,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEndTime;
+        private System.Windows.Forms.Button buttonCreateReport;
+        private System.Windows.Forms.Button buttonCreateGraphic;
     }
 }
