@@ -40,11 +40,11 @@
             this.buttonStartStopTimer = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonCreateReport = new System.Windows.Forms.Button();
+            this.buttonCreateGraphic = new System.Windows.Forms.Button();
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
-            this.buttonCreateGraphic = new System.Windows.Forms.Button();
-            this.buttonCreateReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -78,6 +78,7 @@
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.Size = new System.Drawing.Size(540, 490);
             this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColumnDate
             // 
@@ -117,7 +118,7 @@
             // textBoxNameForTimeline
             // 
             this.textBoxNameForTimeline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxNameForTimeline.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxNameForTimeline.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxNameForTimeline.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxNameForTimeline.Location = new System.Drawing.Point(145, 12);
             this.textBoxNameForTimeline.Multiline = true;
@@ -156,6 +157,30 @@
             this.panel2.Size = new System.Drawing.Size(183, 548);
             this.panel2.TabIndex = 9;
             // 
+            // buttonCreateReport
+            // 
+            this.buttonCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCreateReport.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCreateReport.Location = new System.Drawing.Point(6, 298);
+            this.buttonCreateReport.Name = "buttonCreateReport";
+            this.buttonCreateReport.Size = new System.Drawing.Size(171, 54);
+            this.buttonCreateReport.TabIndex = 11;
+            this.buttonCreateReport.Text = "Сформировать отчет";
+            this.buttonCreateReport.UseVisualStyleBackColor = true;
+            // 
+            // buttonCreateGraphic
+            // 
+            this.buttonCreateGraphic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCreateGraphic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCreateGraphic.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 238);
+            this.buttonCreateGraphic.Name = "buttonCreateGraphic";
+            this.buttonCreateGraphic.Size = new System.Drawing.Size(171, 54);
+            this.buttonCreateGraphic.TabIndex = 10;
+            this.buttonCreateGraphic.Text = "Сформировать график";
+            this.buttonCreateGraphic.UseVisualStyleBackColor = true;
+            // 
             // buttonGoToAdminForm
             // 
             this.buttonGoToAdminForm.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -192,30 +217,6 @@
             this.buttonAutoMod.TabIndex = 7;
             this.buttonAutoMod.Text = "Автоматический режим";
             this.buttonAutoMod.UseVisualStyleBackColor = true;
-            // 
-            // buttonCreateGraphic
-            // 
-            this.buttonCreateGraphic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateGraphic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCreateGraphic.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 238);
-            this.buttonCreateGraphic.Name = "buttonCreateGraphic";
-            this.buttonCreateGraphic.Size = new System.Drawing.Size(171, 54);
-            this.buttonCreateGraphic.TabIndex = 10;
-            this.buttonCreateGraphic.Text = "Сформировать график";
-            this.buttonCreateGraphic.UseVisualStyleBackColor = true;
-            // 
-            // buttonCreateReport
-            // 
-            this.buttonCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCreateReport.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateReport.Location = new System.Drawing.Point(6, 298);
-            this.buttonCreateReport.Name = "buttonCreateReport";
-            this.buttonCreateReport.Size = new System.Drawing.Size(171, 54);
-            this.buttonCreateReport.TabIndex = 11;
-            this.buttonCreateReport.Text = "Сформировать отчет";
-            this.buttonCreateReport.UseVisualStyleBackColor = true;
             // 
             // FormTimeTracker
             // 

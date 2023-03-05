@@ -44,6 +44,8 @@ namespace TimeTrackerDesktop
             {
                 buttonCreateGraphic.Visible = false;
             }
+
+            //Сделать подгрузку данных за текущую неделю
         }
 
         private void buttonStartStopTimer_Click(object sender, EventArgs e)
@@ -71,6 +73,11 @@ namespace TimeTrackerDesktop
                 time = endTime - startTime;
 
                 labelTime.Text = "00:00:00";
+
+                dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay, endTime.TimeOfDay);
+                textBoxNameForTimeline.Clear();
+
+                // Сделать добавление записи в БД!
             }
 
 
@@ -104,6 +111,11 @@ namespace TimeTrackerDesktop
         public void SetDB(ClassDataBase _db)
         {
             this.database = _db;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
