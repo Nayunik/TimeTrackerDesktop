@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTime = new System.Windows.Forms.Label();
             this.textBoxNameForTimeline = new System.Windows.Forms.TextBox();
             this.buttonStartStopTimer = new System.Windows.Forms.Button();
@@ -45,6 +41,11 @@
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,7 +60,7 @@
             this.panel1.Controls.Add(this.buttonStartStopTimer);
             this.panel1.Location = new System.Drawing.Point(201, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 548);
+            this.panel1.Size = new System.Drawing.Size(671, 548);
             this.panel1.TabIndex = 3;
             // 
             // dataGridView1
@@ -71,39 +72,16 @@
             this.ColumnDate,
             this.ColumnName,
             this.ColumnStartTime,
-            this.ColumnEndTime});
+            this.ColumnEndTime,
+            this.ColumnDur});
             this.dataGridView1.Location = new System.Drawing.Point(18, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 490);
+            this.dataGridView1.Size = new System.Drawing.Size(645, 490);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ColumnDate
-            // 
-            this.ColumnDate.HeaderText = "Дата";
-            this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Наименование";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 220;
-            // 
-            // ColumnStartTime
-            // 
-            this.ColumnStartTime.HeaderText = "Начало";
-            this.ColumnStartTime.Name = "ColumnStartTime";
-            this.ColumnStartTime.ReadOnly = true;
-            // 
-            // ColumnEndTime
-            // 
-            this.ColumnEndTime.HeaderText = "Конец";
-            this.ColumnEndTime.Name = "ColumnEndTime";
-            this.ColumnEndTime.ReadOnly = true;
             // 
             // labelTime
             // 
@@ -124,7 +102,7 @@
             this.textBoxNameForTimeline.Multiline = true;
             this.textBoxNameForTimeline.Name = "textBoxNameForTimeline";
             this.textBoxNameForTimeline.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxNameForTimeline.Size = new System.Drawing.Size(338, 34);
+            this.textBoxNameForTimeline.Size = new System.Drawing.Size(446, 34);
             this.textBoxNameForTimeline.TabIndex = 20;
             // 
             // buttonStartStopTimer
@@ -132,7 +110,7 @@
             this.buttonStartStopTimer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStartStopTimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonStartStopTimer.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonStartStopTimer.Location = new System.Drawing.Point(489, 11);
+            this.buttonStartStopTimer.Location = new System.Drawing.Point(597, 11);
             this.buttonStartStopTimer.Name = "buttonStartStopTimer";
             this.buttonStartStopTimer.Size = new System.Drawing.Size(66, 34);
             this.buttonStartStopTimer.TabIndex = 10;
@@ -199,7 +177,7 @@
             this.buttonAutoHideMod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAutoHideMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAutoHideMod.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 62);
+            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 71);
             this.buttonAutoHideMod.Name = "buttonAutoHideMod";
             this.buttonAutoHideMod.Size = new System.Drawing.Size(171, 54);
             this.buttonAutoHideMod.TabIndex = 8;
@@ -211,19 +189,51 @@
             this.buttonAutoMod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAutoMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAutoMod.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAutoMod.Location = new System.Drawing.Point(6, 3);
+            this.buttonAutoMod.Location = new System.Drawing.Point(6, 12);
             this.buttonAutoMod.Name = "buttonAutoMod";
             this.buttonAutoMod.Size = new System.Drawing.Size(171, 53);
             this.buttonAutoMod.TabIndex = 7;
             this.buttonAutoMod.Text = "Автоматический режим";
             this.buttonAutoMod.UseVisualStyleBackColor = true;
             // 
+            // ColumnDate
+            // 
+            this.ColumnDate.HeaderText = "Дата";
+            this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Наименование";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 220;
+            // 
+            // ColumnStartTime
+            // 
+            this.ColumnStartTime.HeaderText = "Начало";
+            this.ColumnStartTime.Name = "ColumnStartTime";
+            this.ColumnStartTime.ReadOnly = true;
+            // 
+            // ColumnEndTime
+            // 
+            this.ColumnEndTime.HeaderText = "Конец";
+            this.ColumnEndTime.Name = "ColumnEndTime";
+            this.ColumnEndTime.ReadOnly = true;
+            // 
+            // ColumnDur
+            // 
+            this.ColumnDur.HeaderText = "Продолжительность";
+            this.ColumnDur.Name = "ColumnDur";
+            this.ColumnDur.ReadOnly = true;
+            this.ColumnDur.Width = 120;
+            // 
             // FormTimeTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(780, 572);
+            this.ClientSize = new System.Drawing.Size(878, 572);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -252,11 +262,12 @@
         private System.Windows.Forms.TextBox textBoxNameForTimeline;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonCreateReport;
+        private System.Windows.Forms.Button buttonCreateGraphic;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEndTime;
-        private System.Windows.Forms.Button buttonCreateReport;
-        private System.Windows.Forms.Button buttonCreateGraphic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDur;
     }
 }
