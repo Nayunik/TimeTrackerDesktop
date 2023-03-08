@@ -74,7 +74,7 @@ namespace TimeTrackerDesktop
 
                 labelTime.Text = "00:00:00";
 
-                dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay, endTime.TimeOfDay);
+                dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay, endTime.TimeOfDay, time);
                 textBoxNameForTimeline.Clear();
 
                 // Сделать добавление записи в БД!
