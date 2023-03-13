@@ -35,7 +35,7 @@ namespace TimeTrackerDesktop.DataBase
 
         }
 
-        public NpgsqlDataReader FunctionUsing (string nameOfFunction)
+        public NpgsqlDataReader SelectFunctionUsing (string nameOfFunction)
         {
             if (string.IsNullOrEmpty(nameOfFunction)) 
             {
@@ -44,6 +44,19 @@ namespace TimeTrackerDesktop.DataBase
             else
             {
                 var command = new NpgsqlCommand("select * from " + nameOfFunction, this.connection);
+                return command.ExecuteReader();
+            }
+        }
+
+        public NpgsqlDataReader ExecuteScript (string nameOfFunction)
+        {
+            if (string.IsNullOrEmpty(nameOfFunction))
+            {
+                return null;
+            }
+            else
+            {
+                var command = new NpgsqlCommand(nameOfFunction, this.connection);
                 return command.ExecuteReader();
             }
         }

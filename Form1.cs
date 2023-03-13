@@ -35,7 +35,6 @@ namespace TimeTrackerDesktop
                 {
                     if (user.Roles.Contains(2))
                     {
-                        // Тут необходимо сделать открытие формы для работы с таймером с проверкой на наличие ролей (нужно делать недоступными кнопки, если нет ролей).
                         this.Hide();
                         FormTimeTracker formTime = new FormTimeTracker();
                         formTime.SetUser(user);

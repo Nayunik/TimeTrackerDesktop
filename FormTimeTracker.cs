@@ -77,7 +77,8 @@ namespace TimeTrackerDesktop
                 dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay, endTime.TimeOfDay, time);
                 textBoxNameForTimeline.Clear();
 
-                // Сделать добавление записи в БД!
+                //database.ExecuteScript("main.insert_timer_info(" + user.UserId +", " +  + ")");
+                // Реализовать вызов метода класса для добавления данных в БД, выше сделать работу через классы
             }
 
 

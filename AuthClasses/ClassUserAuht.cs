@@ -34,7 +34,7 @@ namespace TimeTrackerDesktop.AuthClasses
                 this.login = login;
                 this.password = password;
 
-                var resultFunction = dataBase.FunctionUsing("main.get_user_info(" + this.userId + ")");
+                var resultFunction = dataBase.SelectFunctionUsing("main.get_user_info(" + this.userId + ")");
                 resultFunction.Read();
                 this.firstname = resultFunction.GetString(0);
                 this.lastname = resultFunction.GetString(1);
@@ -43,7 +43,7 @@ namespace TimeTrackerDesktop.AuthClasses
                 this.email = resultFunction.GetString(4);
                 resultFunction.Close();
 
-                resultFunction = dataBase.FunctionUsing("main.get_user_roles(" + this.userId + ")");
+                resultFunction = dataBase.SelectFunctionUsing("main.get_user_roles(" + this.userId + ")");
                 while (resultFunction.Read())
                 {
                     this.roles.Add(resultFunction.GetInt32(0));
@@ -72,7 +72,7 @@ namespace TimeTrackerDesktop.AuthClasses
             }
             else
             {
-                var resultFunction = dataBase.FunctionUsing("auth.user_login(\'" + login + "\', \'" + password + "\')");
+                var resultFunction = dataBase.SelectFunctionUsing("auth.user_login(\'" + login + "\', \'" + password + "\')");
                 resultFunction.Read();
                 if (resultFunction != null)
                 {
@@ -99,7 +99,7 @@ namespace TimeTrackerDesktop.AuthClasses
             }
             else
             {
-                var resultFunction = dataBase.FunctionUsing("auth.user_is_active(\'" + login + "\', \'" + password + "\')");
+                var resultFunction = dataBase.SelectFunctionUsing("auth.user_is_active(\'" + login + "\', \'" + password + "\')");
                 resultFunction.Read();
                 if (resultFunction != null)
                 {
