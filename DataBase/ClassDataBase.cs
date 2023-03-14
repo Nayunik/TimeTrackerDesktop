@@ -48,16 +48,13 @@ namespace TimeTrackerDesktop.DataBase
             }
         }
 
-        public NpgsqlDataReader ExecuteScript (string nameOfFunction)
+        public void ExecuteScript (string nameOfFunction)
         {
-            if (string.IsNullOrEmpty(nameOfFunction))
+            if (!string.IsNullOrEmpty(nameOfFunction))
             {
-                return null;
-            }
-            else
-            {
+                
                 var command = new NpgsqlCommand(nameOfFunction, this.connection);
-                return command.ExecuteReader();
+                command.ExecuteReader().Close();
             }
         }
         

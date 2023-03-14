@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTrackerDesktop.AuthClasses;
 using TimeTrackerDesktop.DataBase;
+using TimeTrackerDesktop.TimerClasses;
 
 namespace TimeTrackerDesktop
 {
@@ -22,8 +23,7 @@ namespace TimeTrackerDesktop
 
         private ClassUserAuht user;
         private ClassDataBase database;
-
-        public int userId;
+        private ClassTimer _timer;
 
         public FormTimeTracker()
         {
@@ -50,6 +50,8 @@ namespace TimeTrackerDesktop
 
         private void buttonStartStopTimer_Click(object sender, EventArgs e)
         {
+            _timer = new ClassTimer(database, user.UserId);
+
             timer1.Enabled = !timer1.Enabled;
             if (buttonIsStart)
             {
@@ -75,12 +77,12 @@ namespace TimeTrackerDesktop
                 labelTime.Text = "00:00:00";
 
                 dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay, endTime.TimeOfDay, time);
+                _timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, ""+startTime.TimeOfDay, ""+endTime.TimeOfDay, ""+time, "");
                 textBoxNameForTimeline.Clear();
-
-                //database.ExecuteScript("main.insert_timer_info(" + user.UserId +", " +  + ")");
+                
                 // Реализовать вызов метода класса для добавления данных в БД, выше сделать работу через классы
             }
-
+            
 
         }
 
