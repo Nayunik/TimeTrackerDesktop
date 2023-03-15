@@ -33,5 +33,10 @@ namespace TimeTrackerDesktop
                 Application.Exit();
             }
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

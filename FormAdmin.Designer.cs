@@ -32,12 +32,14 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonDeleteBlock = new System.Windows.Forms.Button();
+            this.buttonChange = new System.Windows.Forms.Button();
             this.ColumnLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFirstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnMiddlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonDeleteBlock = new System.Windows.Forms.Button();
-            this.buttonChange = new System.Windows.Forms.Button();
+            this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +67,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -72,37 +75,18 @@
             this.ColumnLogin,
             this.ColumnLastname,
             this.ColumnFirstname,
-            this.ColumnMiddlename});
+            this.ColumnMiddlename,
+            this.ColumnPhone,
+            this.ColumnEmail});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(600, 468);
             this.dataGridView1.TabIndex = 25;
-            // 
-            // ColumnLogin
-            // 
-            this.ColumnLogin.HeaderText = "Login";
-            this.ColumnLogin.Name = "ColumnLogin";
-            this.ColumnLogin.ReadOnly = true;
-            // 
-            // ColumnLastname
-            // 
-            this.ColumnLastname.HeaderText = "Фамилия";
-            this.ColumnLastname.Name = "ColumnLastname";
-            this.ColumnLastname.ReadOnly = true;
-            // 
-            // ColumnFirstname
-            // 
-            this.ColumnFirstname.HeaderText = "Имя";
-            this.ColumnFirstname.Name = "ColumnFirstname";
-            this.ColumnFirstname.ReadOnly = true;
-            // 
-            // ColumnMiddlename
-            // 
-            this.ColumnMiddlename.HeaderText = "Отчество";
-            this.ColumnMiddlename.Name = "ColumnMiddlename";
-            this.ColumnMiddlename.ReadOnly = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttonDeleteBlock
             // 
@@ -128,6 +112,42 @@
             this.buttonChange.Text = "Редактировать";
             this.buttonChange.UseVisualStyleBackColor = true;
             // 
+            // ColumnLogin
+            // 
+            this.ColumnLogin.HeaderText = "Login";
+            this.ColumnLogin.Name = "ColumnLogin";
+            this.ColumnLogin.ReadOnly = true;
+            // 
+            // ColumnLastname
+            // 
+            this.ColumnLastname.HeaderText = "Фамилия";
+            this.ColumnLastname.Name = "ColumnLastname";
+            this.ColumnLastname.ReadOnly = true;
+            // 
+            // ColumnFirstname
+            // 
+            this.ColumnFirstname.HeaderText = "Имя";
+            this.ColumnFirstname.Name = "ColumnFirstname";
+            this.ColumnFirstname.ReadOnly = true;
+            // 
+            // ColumnMiddlename
+            // 
+            this.ColumnMiddlename.HeaderText = "Отчество";
+            this.ColumnMiddlename.Name = "ColumnMiddlename";
+            this.ColumnMiddlename.ReadOnly = true;
+            // 
+            // ColumnPhone
+            // 
+            this.ColumnPhone.HeaderText = "Телефон";
+            this.ColumnPhone.Name = "ColumnPhone";
+            this.ColumnPhone.ReadOnly = true;
+            // 
+            // ColumnEmail
+            // 
+            this.ColumnEmail.HeaderText = "Эл. почта";
+            this.ColumnEmail.Name = "ColumnEmail";
+            this.ColumnEmail.ReadOnly = true;
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +160,7 @@
             this.MaximizeBox = false;
             this.Name = "FormAdmin";
             this.Text = "Администрирование";
+            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -157,5 +178,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFirstname;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMiddlename;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmail;
     }
 }

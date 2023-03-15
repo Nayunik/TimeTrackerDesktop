@@ -241,6 +241,7 @@
             this.buttonRegister.TabIndex = 6;
             this.buttonRegister.Text = "Зарегистрироваться";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // textBox2
             // 

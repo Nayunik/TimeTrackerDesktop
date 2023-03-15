@@ -108,6 +108,8 @@ namespace TimeTrackerDesktop
         private void buttonGoToAdminForm_Click(object sender, EventArgs e)
         {
             FormAdmin formAdmin = new FormAdmin();
+            formAdmin.SetUser(user);
+            formAdmin.SetDB(database);
             formAdmin.ShowDialog();
             formAdmin.Focus();
             formAdmin.Owner= this; 
