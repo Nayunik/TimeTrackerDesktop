@@ -45,7 +45,12 @@ namespace TimeTrackerDesktop
                 buttonCreateGraphic.Visible = false;
             }
 
-            //Сделать подгрузку данных за текущую неделю
+            var resultFunc = database.SelectFunctionUsing(string.Format("main.get_timers({0})", user.UserId));
+            while (resultFunc.Read())
+            {
+                dataGridView1.Rows.Add(resultFunc.GetValue(0).ToString().Split(' ')[0], resultFunc.GetValue(1), resultFunc.GetValue(2), resultFunc.GetValue(3), resultFunc.GetValue(4));
+            }
+            resultFunc.Close();
         }
 
         private void buttonStartStopTimer_Click(object sender, EventArgs e)
@@ -76,8 +81,8 @@ namespace TimeTrackerDesktop
 
                 labelTime.Text = "00:00:00";
 
-                dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay, endTime.TimeOfDay, time);
-                _timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, ""+startTime.TimeOfDay, ""+endTime.TimeOfDay, ""+time, "");
+                dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay.ToString().Split('.')[0], endTime.TimeOfDay.ToString().Split('.')[0], time.ToString().Split('.')[0]);
+                _timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, ""+startTime.TimeOfDay, ""+endTime.TimeOfDay, time.ToString().Split('.')[0], "");
                 textBoxNameForTimeline.Clear();
                 
                 // Реализовать вызов метода класса для добавления данных в БД, выше сделать работу через классы

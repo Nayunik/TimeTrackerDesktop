@@ -42,5 +42,6 @@ namespace TimeTrackerDesktop.TimerClasses
             dataBase.ExecuteScript(string.Format("insert into main.timer (user_id, start_time, end_time, description, app_name, duration, \"date\") \r\n" +
                 "values ({0}, to_timestamp('{1}','HH24:MI:SS'), to_timestamp('{2}','HH24:MI:SS'), '{3}', '{4}', to_timestamp('{5}','HH24:MI:SS'), to_date('{6}','DD.MM.YYYY'));", _user_id, _start_time, _end_time, _description, _app_name, _duration, _date)); 
         }
+
     }
 }

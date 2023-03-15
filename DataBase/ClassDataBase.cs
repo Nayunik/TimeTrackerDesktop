@@ -52,7 +52,6 @@ namespace TimeTrackerDesktop.DataBase
         {
             if (!string.IsNullOrEmpty(nameOfFunction))
             {
-                
                 var command = new NpgsqlCommand(nameOfFunction, this.connection);
                 command.ExecuteReader().Close();
             }
