@@ -31,24 +31,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword2 = new System.Windows.Forms.TextBox();
             this.buttonClearAll = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxLastname = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxMiddlename = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelGoToAdminForm = new System.Windows.Forms.Label();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -59,29 +58,28 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.checkedListBox1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBoxPassword1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBoxPassword2);
             this.panel1.Controls.Add(this.buttonClearAll);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBoxPhone);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.textBoxEmail);
+            this.panel1.Controls.Add(this.textBoxLastname);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textBoxName);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBoxMiddlename);
             this.panel1.Controls.Add(this.buttonSave);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.labelGoToAdminForm);
+            this.panel1.Controls.Add(this.textBoxLogin);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(609, 501);
+            this.panel1.Size = new System.Drawing.Size(609, 481);
             this.panel1.TabIndex = 3;
             // 
             // label10
@@ -103,22 +101,22 @@
             this.checkedListBox1.Items.AddRange(new object[] {
             "Администратор",
             "Право работать с таймером",
-            "Право формировать отчет",
+            "Право составлять отчет",
             "Право формировать график"});
             this.checkedListBox1.Location = new System.Drawing.Point(317, 279);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(250, 90);
             this.checkedListBox1.TabIndex = 29;
             // 
-            // textBox2
+            // textBoxPassword1
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(31, 279);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 27);
-            this.textBox2.TabIndex = 28;
+            this.textBoxPassword1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPassword1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxPassword1.Location = new System.Drawing.Point(31, 279);
+            this.textBoxPassword1.Name = "textBoxPassword1";
+            this.textBoxPassword1.Size = new System.Drawing.Size(250, 27);
+            this.textBoxPassword1.TabIndex = 28;
             // 
             // label3
             // 
@@ -126,9 +124,9 @@
             this.label3.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(27, 257);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 19);
+            this.label3.Size = new System.Drawing.Size(67, 19);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Пароль*:";
+            this.label3.Text = "Пароль:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -137,20 +135,20 @@
             this.label4.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(27, 322);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 19);
+            this.label4.Size = new System.Drawing.Size(149, 19);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Повторите пароль*:";
+            this.label4.Text = "Повторите пароль:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // textBoxPassword2
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox3.Location = new System.Drawing.Point(31, 344);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 27);
-            this.textBox3.TabIndex = 25;
+            this.textBoxPassword2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPassword2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxPassword2.Location = new System.Drawing.Point(31, 344);
+            this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.Size = new System.Drawing.Size(250, 27);
+            this.textBoxPassword2.TabIndex = 25;
             // 
             // buttonClearAll
             // 
@@ -163,16 +161,17 @@
             this.buttonClearAll.TabIndex = 24;
             this.buttonClearAll.Text = "Очистить все поля";
             this.buttonClearAll.UseVisualStyleBackColor = true;
+            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
             // 
-            // textBox5
+            // textBoxPhone
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox5.Location = new System.Drawing.Point(31, 151);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 27);
-            this.textBox5.TabIndex = 23;
+            this.textBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPhone.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhone.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxPhone.Location = new System.Drawing.Point(31, 151);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(250, 27);
+            this.textBoxPhone.TabIndex = 23;
             // 
             // label5
             // 
@@ -196,25 +195,25 @@
             this.label6.Text = "Электронная почта*:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox6
+            // textBoxEmail
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox6.Location = new System.Drawing.Point(31, 216);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(250, 27);
-            this.textBox6.TabIndex = 20;
+            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxEmail.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmail.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxEmail.Location = new System.Drawing.Point(31, 216);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(250, 27);
+            this.textBoxEmail.TabIndex = 20;
             // 
-            // textBox8
+            // textBoxLastname
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox8.Location = new System.Drawing.Point(317, 84);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(250, 27);
-            this.textBox8.TabIndex = 19;
+            this.textBoxLastname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLastname.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLastname.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxLastname.Location = new System.Drawing.Point(317, 84);
+            this.textBoxLastname.Name = "textBoxLastname";
+            this.textBoxLastname.Size = new System.Drawing.Size(250, 27);
+            this.textBoxLastname.TabIndex = 19;
             // 
             // label9
             // 
@@ -227,15 +226,15 @@
             this.label9.Text = "Фамилия*:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox7
+            // textBoxName
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox7.Location = new System.Drawing.Point(317, 149);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(250, 27);
-            this.textBox7.TabIndex = 17;
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxName.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxName.Location = new System.Drawing.Point(317, 149);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(250, 27);
+            this.textBoxName.TabIndex = 17;
             // 
             // label8
             // 
@@ -259,15 +258,15 @@
             this.label7.Text = "Отчество:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // textBoxMiddlename
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox4.Location = new System.Drawing.Point(317, 216);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 27);
-            this.textBox4.TabIndex = 11;
+            this.textBoxMiddlename.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMiddlename.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxMiddlename.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxMiddlename.Location = new System.Drawing.Point(317, 216);
+            this.textBoxMiddlename.Name = "textBoxMiddlename";
+            this.textBoxMiddlename.Size = new System.Drawing.Size(250, 27);
+            this.textBoxMiddlename.TabIndex = 11;
             // 
             // buttonSave
             // 
@@ -280,28 +279,17 @@
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // textBox1
+            // textBoxLogin
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(31, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 27);
-            this.textBox1.TabIndex = 4;
-            // 
-            // labelGoToAdminForm
-            // 
-            this.labelGoToAdminForm.AutoSize = true;
-            this.labelGoToAdminForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelGoToAdminForm.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelGoToAdminForm.Location = new System.Drawing.Point(188, 473);
-            this.labelGoToAdminForm.Name = "labelGoToAdminForm";
-            this.labelGoToAdminForm.Size = new System.Drawing.Size(227, 15);
-            this.labelGoToAdminForm.TabIndex = 3;
-            this.labelGoToAdminForm.Text = "Перейти к окну администрирования";
-            this.labelGoToAdminForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLogin.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLogin.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxLogin.Location = new System.Drawing.Point(31, 84);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(250, 27);
+            this.textBoxLogin.TabIndex = 4;
             // 
             // label2
             // 
@@ -330,7 +318,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(628, 516);
+            this.ClientSize = new System.Drawing.Size(628, 498);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -347,24 +335,23 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxPassword1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxPassword2;
         private System.Windows.Forms.Button buttonClearAll;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxLastname;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxMiddlename;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label labelGoToAdminForm;
+        private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;

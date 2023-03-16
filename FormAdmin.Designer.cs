@@ -86,6 +86,7 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(600, 468);
             this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColumnLogin
@@ -127,6 +128,7 @@
             // buttonDeleteBlock
             // 
             this.buttonDeleteBlock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeleteBlock.Enabled = false;
             this.buttonDeleteBlock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeleteBlock.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDeleteBlock.Location = new System.Drawing.Point(204, 477);
@@ -139,6 +141,7 @@
             // buttonChange
             // 
             this.buttonChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChange.Enabled = false;
             this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonChange.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonChange.Location = new System.Drawing.Point(3, 477);

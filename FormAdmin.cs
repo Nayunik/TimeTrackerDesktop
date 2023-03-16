@@ -24,7 +24,7 @@ namespace TimeTrackerDesktop
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)
@@ -53,6 +53,20 @@ namespace TimeTrackerDesktop
             formChangeUser.SetUser(selectedUser);
             formChangeUser.SetDB(database);
             formChangeUser.ShowDialog();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.ColumnIndex == 0)
+            {
+                buttonChange.Enabled = true;
+                buttonDeleteBlock.Enabled = true;
+            }
+            else
+            {
+                buttonChange.Enabled = false;
+                buttonDeleteBlock.Enabled = false;
+            }
         }
     }
 }
