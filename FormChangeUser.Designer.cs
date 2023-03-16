@@ -115,6 +115,7 @@
             this.textBoxPassword1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxPassword1.Location = new System.Drawing.Point(31, 279);
             this.textBoxPassword1.Name = "textBoxPassword1";
+            this.textBoxPassword1.PasswordChar = '*';
             this.textBoxPassword1.Size = new System.Drawing.Size(250, 27);
             this.textBoxPassword1.TabIndex = 28;
             // 
@@ -147,6 +148,7 @@
             this.textBoxPassword2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxPassword2.Location = new System.Drawing.Point(31, 344);
             this.textBoxPassword2.Name = "textBoxPassword2";
+            this.textBoxPassword2.PasswordChar = '*';
             this.textBoxPassword2.Size = new System.Drawing.Size(250, 27);
             this.textBoxPassword2.TabIndex = 25;
             // 
@@ -253,9 +255,9 @@
             this.label7.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(313, 194);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 19);
+            this.label7.Size = new System.Drawing.Size(90, 19);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Отчество:";
+            this.label7.Text = "Отчество*:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxMiddlename
@@ -288,6 +290,7 @@
             this.textBoxLogin.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxLogin.Location = new System.Drawing.Point(31, 84);
             this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.ReadOnly = true;
             this.textBoxLogin.Size = new System.Drawing.Size(250, 27);
             this.textBoxLogin.TabIndex = 4;
             // 

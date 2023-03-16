@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTrackerDesktop.AuthClasses;
@@ -76,7 +77,64 @@ namespace TimeTrackerDesktop
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                MessageBox.Show("Заполните адрес почты!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBoxLastname.Text))
+            {
+                MessageBox.Show("Заполните фамилию!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBoxLogin.Text))
+            {
+                MessageBox.Show("Заполните логин!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBoxMiddlename.Text))
+            {
+                MessageBox.Show("Заполните отчество!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBoxName.Text))
+            {
+                MessageBox.Show("Заполните имя!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBoxPhone.Text))
+            {
+                MessageBox.Show("Заполните телефон!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (!Regex.IsMatch(textBoxEmail.Text, ".+@.+\\.[a-z]+"))
+            {
+                MessageBox.Show("Неверная информация о почте!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else 
+            {
+                if (textBoxPassword1.Text != textBoxPassword2.Text)
+                {
+                    MessageBox.Show("Пароли отличаются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(textBoxPassword1.Text) && !string.IsNullOrEmpty(textBoxPassword2.Text))
+                    {
+                        //Необходимо изменение пользователя и пароля!
+                    }
+                    else
+                    {
+                        //Необходимо изменение только пользователя
+                    }
+                    
+                }
+                
+            }
+
+
         }
     }
 }
