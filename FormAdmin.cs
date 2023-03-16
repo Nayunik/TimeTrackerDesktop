@@ -44,5 +44,15 @@ namespace TimeTrackerDesktop
         {
             this.database = _db;
         }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            string selectedLogin = dataGridView1.SelectedCells[0].Value.ToString();
+            ClassUserAuht selectedUser = new ClassUserAuht(selectedLogin, database);
+            FormChangeUser formChangeUser = new FormChangeUser();
+            formChangeUser.SetUser(selectedUser);
+            formChangeUser.SetDB(database);
+            formChangeUser.ShowDialog();
+        }
     }
 }

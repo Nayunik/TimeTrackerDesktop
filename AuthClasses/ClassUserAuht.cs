@@ -52,6 +52,34 @@ namespace TimeTrackerDesktop.AuthClasses
             }
         }
 
+        //Начать от сюда доделвать
+        public ClassUserAuht(string login, ClassDataBase dataBase)
+        {
+            this.dataBase = dataBase;
+            this.userId = GetUserId(login);
+
+            if (userId != -1)
+            {
+                this.login = login;
+
+                var resultFunction = dataBase.SelectFunctionUsing("main.get_user_info(" + this.userId + ")");
+                resultFunction.Read();
+                this.firstname = resultFunction.GetString(0);
+                this.lastname = resultFunction.GetString(1);
+                this.middlename = resultFunction.GetString(2);
+                this.phone = resultFunction.GetString(3);
+                this.email = resultFunction.GetString(4);
+                resultFunction.Close();
+
+                resultFunction = dataBase.SelectFunctionUsing("main.get_user_roles(" + this.userId + ")");
+                while (resultFunction.Read())
+                {
+                    this.roles.Add(resultFunction.GetInt32(0));
+                }
+                resultFunction.Close();
+            }
+        }
+
         public string Firstname { get => firstname; set => firstname = value; }
         public string Lastname { get => lastname; set => lastname = value; }
         public string Middlename { get => middlename; set => middlename = value; }
@@ -73,6 +101,32 @@ namespace TimeTrackerDesktop.AuthClasses
             else
             {
                 var resultFunction = dataBase.SelectFunctionUsing("auth.user_login(\'" + login + "\', \'" + password + "\')");
+                resultFunction.Read();
+                if (resultFunction != null)
+                {
+                    result = resultFunction.GetInt32(0);
+                    resultFunction.Close();
+                    return result;
+
+                }
+                else
+                {
+                    resultFunction.Close();
+                    return result;
+                }
+            }
+        }
+
+        public int GetUserId(string login)
+        {
+            int result = -1;
+            if (string.IsNullOrEmpty(login))
+            {
+                return result;
+            }
+            else
+            {
+                var resultFunction = dataBase.SelectFunctionUsing("auth.user_login(\'" + login + "\')");
                 resultFunction.Read();
                 if (resultFunction != null)
                 {

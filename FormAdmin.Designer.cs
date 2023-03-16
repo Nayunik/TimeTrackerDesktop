@@ -32,14 +32,14 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonDeleteBlock = new System.Windows.Forms.Button();
-            this.buttonChange = new System.Windows.Forms.Button();
             this.ColumnLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFirstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnMiddlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonDeleteBlock = new System.Windows.Forms.Button();
+            this.buttonChange = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -88,30 +88,6 @@
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // buttonDeleteBlock
-            // 
-            this.buttonDeleteBlock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDeleteBlock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteBlock.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteBlock.Location = new System.Drawing.Point(204, 477);
-            this.buttonDeleteBlock.Name = "buttonDeleteBlock";
-            this.buttonDeleteBlock.Size = new System.Drawing.Size(195, 35);
-            this.buttonDeleteBlock.TabIndex = 24;
-            this.buttonDeleteBlock.Text = "Удалить";
-            this.buttonDeleteBlock.UseVisualStyleBackColor = true;
-            // 
-            // buttonChange
-            // 
-            this.buttonChange.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonChange.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonChange.Location = new System.Drawing.Point(3, 477);
-            this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(195, 35);
-            this.buttonChange.TabIndex = 6;
-            this.buttonChange.Text = "Редактировать";
-            this.buttonChange.UseVisualStyleBackColor = true;
-            // 
             // ColumnLogin
             // 
             this.ColumnLogin.HeaderText = "Login";
@@ -147,6 +123,31 @@
             this.ColumnEmail.HeaderText = "Эл. почта";
             this.ColumnEmail.Name = "ColumnEmail";
             this.ColumnEmail.ReadOnly = true;
+            // 
+            // buttonDeleteBlock
+            // 
+            this.buttonDeleteBlock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDeleteBlock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDeleteBlock.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDeleteBlock.Location = new System.Drawing.Point(204, 477);
+            this.buttonDeleteBlock.Name = "buttonDeleteBlock";
+            this.buttonDeleteBlock.Size = new System.Drawing.Size(195, 35);
+            this.buttonDeleteBlock.TabIndex = 24;
+            this.buttonDeleteBlock.Text = "Удалить";
+            this.buttonDeleteBlock.UseVisualStyleBackColor = true;
+            // 
+            // buttonChange
+            // 
+            this.buttonChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonChange.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonChange.Location = new System.Drawing.Point(3, 477);
+            this.buttonChange.Name = "buttonChange";
+            this.buttonChange.Size = new System.Drawing.Size(195, 35);
+            this.buttonChange.TabIndex = 6;
+            this.buttonChange.Text = "Редактировать";
+            this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // FormAdmin
             // 

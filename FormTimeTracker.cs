@@ -112,7 +112,7 @@ namespace TimeTrackerDesktop
             formAdmin.SetDB(database);
             formAdmin.ShowDialog();
             formAdmin.Focus();
-            formAdmin.Owner= this; 
+            formAdmin.Owner = this; 
         }
         public void SetUser(ClassUserAuht _user)
         {
