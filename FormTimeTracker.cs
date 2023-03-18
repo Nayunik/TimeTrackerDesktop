@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Management;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTrackerDesktop.AuthClasses;
@@ -16,7 +20,7 @@ namespace TimeTrackerDesktop
     public partial class FormTimeTracker : Form
     {
         private bool buttonIsStart = true;
-        private Timer timer = new Timer();
+        private System.Timers.Timer timer = new System.Timers.Timer();
         private DateTime startTime;
         private DateTime endTime;
         private TimeSpan time;
@@ -24,6 +28,8 @@ namespace TimeTrackerDesktop
         private ClassUserAuht user;
         private ClassDataBase database;
         private ClassTimer _timer;
+
+        private CancellationTokenSource _tokenSource;
 
         public FormTimeTracker()
         {
@@ -127,5 +133,17 @@ namespace TimeTrackerDesktop
         {
 
         }
+
+        private async void buttonAutoMod_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+
+
+        
+
+
     }
 }

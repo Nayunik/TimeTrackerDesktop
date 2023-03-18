@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TimeTrackerDesktop.DataBase;
 
 namespace TimeTrackerDesktop.TimerClasses
@@ -43,5 +45,6 @@ namespace TimeTrackerDesktop.TimerClasses
                 "values ({0}, to_timestamp('{1}','HH24:MI:SS'), to_timestamp('{2}','HH24:MI:SS'), '{3}', '{4}', to_timestamp('{5}','HH24:MI:SS'), to_date('{6}','DD.MM.YYYY'));", _user_id, _start_time, _end_time, _description, _app_name, _duration, _date)); 
         }
 
+        
     }
 }

@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTime = new System.Windows.Forms.Label();
             this.textBoxNameForTimeline = new System.Windows.Forms.TextBox();
             this.buttonStartStopTimer = new System.Windows.Forms.Button();
@@ -43,11 +46,6 @@
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
-            this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,14 +67,6 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
@@ -84,14 +74,6 @@
             this.ColumnStartTime,
             this.ColumnEndTime,
             this.ColumnDur});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(18, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -100,6 +82,38 @@
             this.dataGridView1.Size = new System.Drawing.Size(694, 490);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ColumnDate
+            // 
+            this.ColumnDate.HeaderText = "Дата";
+            this.ColumnDate.Name = "ColumnDate";
+            this.ColumnDate.ReadOnly = true;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Наименование";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 220;
+            // 
+            // ColumnStartTime
+            // 
+            this.ColumnStartTime.HeaderText = "Начало";
+            this.ColumnStartTime.Name = "ColumnStartTime";
+            this.ColumnStartTime.ReadOnly = true;
+            // 
+            // ColumnEndTime
+            // 
+            this.ColumnEndTime.HeaderText = "Конец";
+            this.ColumnEndTime.Name = "ColumnEndTime";
+            this.ColumnEndTime.ReadOnly = true;
+            // 
+            // ColumnDur
+            // 
+            this.ColumnDur.HeaderText = "Продолжительность";
+            this.ColumnDur.Name = "ColumnDur";
+            this.ColumnDur.ReadOnly = true;
+            this.ColumnDur.Width = 170;
             // 
             // labelTime
             // 
@@ -213,38 +227,7 @@
             this.buttonAutoMod.TabIndex = 7;
             this.buttonAutoMod.Text = "Автоматический режим";
             this.buttonAutoMod.UseVisualStyleBackColor = true;
-            // 
-            // ColumnDate
-            // 
-            this.ColumnDate.HeaderText = "Дата";
-            this.ColumnDate.Name = "ColumnDate";
-            this.ColumnDate.ReadOnly = true;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Наименование";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 220;
-            // 
-            // ColumnStartTime
-            // 
-            this.ColumnStartTime.HeaderText = "Начало";
-            this.ColumnStartTime.Name = "ColumnStartTime";
-            this.ColumnStartTime.ReadOnly = true;
-            // 
-            // ColumnEndTime
-            // 
-            this.ColumnEndTime.HeaderText = "Конец";
-            this.ColumnEndTime.Name = "ColumnEndTime";
-            this.ColumnEndTime.ReadOnly = true;
-            // 
-            // ColumnDur
-            // 
-            this.ColumnDur.HeaderText = "Продолжительность";
-            this.ColumnDur.Name = "ColumnDur";
-            this.ColumnDur.ReadOnly = true;
-            this.ColumnDur.Width = 170;
+            this.buttonAutoMod.Click += new System.EventHandler(this.buttonAutoMod_Click);
             // 
             // FormTimeTracker
             // 
