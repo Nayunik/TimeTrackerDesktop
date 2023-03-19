@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ActiveWindow.BLL.ActiveWindow;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
+
 using System.Drawing;
 using System.Linq;
-using System.Management;
+
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -14,6 +15,7 @@ using System.Windows.Forms;
 using TimeTrackerDesktop.AuthClasses;
 using TimeTrackerDesktop.DataBase;
 using TimeTrackerDesktop.TimerClasses;
+
 
 namespace TimeTrackerDesktop
 {
@@ -30,6 +32,11 @@ namespace TimeTrackerDesktop
         private ClassTimer _timer;
 
         private CancellationTokenSource _tokenSource;
+
+        private List<string> listAppName;
+        private List<TimeSpan> listAppTime;
+
+        int o = 0;
 
         public FormTimeTracker()
         {
@@ -71,7 +78,7 @@ namespace TimeTrackerDesktop
                 buttonIsStart = false;
 
                 timer1.Enabled = true;
-                startTime= DateTime.Now;
+                startTime = DateTime.Now;
                 timer.Start();
 
             }
@@ -137,13 +144,129 @@ namespace TimeTrackerDesktop
         private async void buttonAutoMod_Click(object sender, EventArgs e)
         {
 
+            listAppName = new List<string>();
+            listAppName.Add(""); // Нужно будет потом его удалить или игнорировать 
+            listAppTime = new List<TimeSpan>();
+
+            buttonAutoMod.BackColor = Color.Green;  // Визуальное изменение кнопки
+            buttonAutoMod.Enabled = false;
             
+            _tokenSource = new CancellationTokenSource();
+            await Task.Run(() => GetApplicationAndTimeInfo(_tokenSource.Token), _tokenSource.Token);
+
+            buttonAutoMod.BackColor = Color.White;  // Визуальное изменение кнопки
+            buttonAutoMod.Enabled = true;
+
+            //timer.Stop();
+
+
+
+            MessageBox.Show(o.ToString());
+
+            
+
+            
+            /*else
+            {
+                
+                buttonAutoModIsStart = true;
+
+                //Сделлать добавление данных в БД и датагрид
+
+               *//* dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay.ToString().Split('.')[0], endTime.TimeOfDay.ToString().Split('.')[0], time.ToString().Split('.')[0]);
+                _timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, "" + startTime.TimeOfDay, "" + endTime.TimeOfDay, time.ToString().Split('.')[0], "");
+                textBoxNameForTimeline.Clear();*//*
+
+                // Реализовать вызов метода класса для добавления данных в БД, выше сделать работу через классы
+            }*/
+
         }
-
-
 
         
 
+        private void GetApplicationAndTimeInfo(CancellationToken cancelToken)
+        {
 
+            /*string nameAppOld = "";
+            string nameApp = "";
+
+            var activeWindowWatcher = new ActiveWindowWatcher(TimeSpan.FromMilliseconds(500));
+            activeWindowWatcher.ActiveWindowChanged += (o, en) => nameAppOld = (en.ActiveWindow);
+            activeWindowWatcher.Start();
+
+            
+
+            startTime = DateTime.Now;
+            
+
+            while (!cancelToken.IsCancellationRequested)
+            {
+                nameApp = "";
+
+                
+                activeWindowWatcher.ActiveWindowChanged += (o, en) => nameApp = (en.ActiveWindow);
+               
+                
+
+                if (nameAppOld != nameApp)
+                {
+                    endTime = DateTime.Now;
+                    
+                    time = endTime - startTime;
+                    listAppTime.Add(time);
+                    listAppName.Add(nameAppOld);
+                    nameAppOld = nameApp;
+                    startTime = DateTime.Now;
+                    
+                }
+                Thread.Sleep(1000);
+            }*/
+            string nameApp = "";
+            string nameAppOld = "";
+
+            while (!cancelToken.IsCancellationRequested)
+            {
+                var activeWindowWatcher = new ActiveWindowWatcher(TimeSpan.FromMilliseconds(500));
+                // activeWindowWatcher.ActiveWindowChanged += (o, en) => nameApp = (en.ActiveWindow);
+
+                //startTime = DateTime.Now;
+
+                activeWindowWatcher.ActiveWindowChanged += (o, en) =>
+                {
+                    if ((en.ActiveWindow) != listAppName.Last())
+                    {
+                        listAppName.Add(en.ActiveWindow);
+
+                        /*endTime = DateTime.Now;
+                        time = endTime - startTime;
+                        listAppTime.Add(time);
+                        startTime = DateTime.Now;*/
+                    }
+                };
+
+                activeWindowWatcher.Start();
+                Thread.Sleep(1000);
+
+
+            }
+
+
+            //if (cancelToken.IsCancellationRequested) return;
+
+
+                /*for (int i = 0; i < 10; i++)
+                {
+                    o += 1;
+                    Thread.Sleep(1000);
+                    if (cancelToken.IsCancellationRequested) return;
+                }*/
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _tokenSource.Cancel();
+        }
     }
 }

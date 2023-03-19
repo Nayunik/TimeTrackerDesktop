@@ -41,6 +41,7 @@
             this.buttonStartStopTimer = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonCreateReport = new System.Windows.Forms.Button();
             this.buttonCreateGraphic = new System.Windows.Forms.Button();
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
@@ -157,6 +158,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.buttonCreateReport);
             this.panel2.Controls.Add(this.buttonCreateGraphic);
             this.panel2.Controls.Add(this.buttonGoToAdminForm);
@@ -166,6 +168,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(183, 548);
             this.panel2.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(6, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 53);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Автоматический режим\r\nСтоп";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCreateReport
             // 
@@ -209,7 +224,7 @@
             this.buttonAutoHideMod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAutoHideMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAutoHideMod.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 71);
+            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 142);
             this.buttonAutoHideMod.Name = "buttonAutoHideMod";
             this.buttonAutoHideMod.Size = new System.Drawing.Size(171, 54);
             this.buttonAutoHideMod.TabIndex = 8;
@@ -225,7 +240,7 @@
             this.buttonAutoMod.Name = "buttonAutoMod";
             this.buttonAutoMod.Size = new System.Drawing.Size(171, 53);
             this.buttonAutoMod.TabIndex = 7;
-            this.buttonAutoMod.Text = "Автоматический режим";
+            this.buttonAutoMod.Text = "Автоматический режим\r\nСтарт";
             this.buttonAutoMod.UseVisualStyleBackColor = true;
             this.buttonAutoMod.Click += new System.EventHandler(this.buttonAutoMod_Click);
             // 
@@ -270,5 +285,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEndTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDur;
+        private System.Windows.Forms.Button button1;
     }
 }
