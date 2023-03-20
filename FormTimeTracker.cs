@@ -157,9 +157,8 @@ namespace TimeTrackerDesktop
             buttonAutoMod.BackColor = Color.White;  // Визуальное изменение кнопки
             buttonAutoMod.Enabled = true;
 
-            //timer.Stop();
-
-
+            listAppName.RemoveAt(0);
+            listAppTime.RemoveAt(0);
 
             MessageBox.Show(o.ToString());
 
@@ -186,50 +185,17 @@ namespace TimeTrackerDesktop
 
         private void GetApplicationAndTimeInfo(CancellationToken cancelToken)
         {
-
-            /*string nameAppOld = "";
-            string nameApp = "";
-
-            var activeWindowWatcher = new ActiveWindowWatcher(TimeSpan.FromMilliseconds(500));
-            activeWindowWatcher.ActiveWindowChanged += (o, en) => nameAppOld = (en.ActiveWindow);
-            activeWindowWatcher.Start();
-
-            
-
-            startTime = DateTime.Now;
-            
-
-            while (!cancelToken.IsCancellationRequested)
-            {
-                nameApp = "";
-
-                
-                activeWindowWatcher.ActiveWindowChanged += (o, en) => nameApp = (en.ActiveWindow);
-               
-                
-
-                if (nameAppOld != nameApp)
-                {
-                    endTime = DateTime.Now;
-                    
-                    time = endTime - startTime;
-                    listAppTime.Add(time);
-                    listAppName.Add(nameAppOld);
-                    nameAppOld = nameApp;
-                    startTime = DateTime.Now;
-                    
-                }
-                Thread.Sleep(1000);
-            }*/
-            string nameApp = "";
-            string nameAppOld = "";
+            bool timeGo = true;
 
             while (!cancelToken.IsCancellationRequested)
             {
                 var activeWindowWatcher = new ActiveWindowWatcher(TimeSpan.FromMilliseconds(500));
-                // activeWindowWatcher.ActiveWindowChanged += (o, en) => nameApp = (en.ActiveWindow);
-
-                //startTime = DateTime.Now;
+                
+                if (timeGo)
+                {
+                    startTime = DateTime.Now;
+                    timeGo = false;
+                }
 
                 activeWindowWatcher.ActiveWindowChanged += (o, en) =>
                 {
@@ -237,30 +203,20 @@ namespace TimeTrackerDesktop
                     {
                         listAppName.Add(en.ActiveWindow);
 
-                        /*endTime = DateTime.Now;
+                        endTime = DateTime.Now;
                         time = endTime - startTime;
                         listAppTime.Add(time);
-                        startTime = DateTime.Now;*/
+                        timeGo = true;
                     }
                 };
 
                 activeWindowWatcher.Start();
                 Thread.Sleep(1000);
 
-
             }
-
-
-            //if (cancelToken.IsCancellationRequested) return;
-
-
-                /*for (int i = 0; i < 10; i++)
-                {
-                    o += 1;
-                    Thread.Sleep(1000);
-                    if (cancelToken.IsCancellationRequested) return;
-                }*/
-
+            endTime = DateTime.Now;
+            time = endTime - startTime;
+            listAppTime.Add(time);
 
         }
 
