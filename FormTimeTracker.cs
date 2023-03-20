@@ -35,6 +35,8 @@ namespace TimeTrackerDesktop
 
         private List<string> listAppName;
         private List<TimeSpan> listAppTime;
+        private List<DateTime> listAppStartTime;
+        private List<DateTime> listAppEndTime;
 
         int o = 0;
 
@@ -143,10 +145,13 @@ namespace TimeTrackerDesktop
 
         private async void buttonAutoMod_Click(object sender, EventArgs e)
         {
+            int listAppCount;
 
             listAppName = new List<string>();
             listAppName.Add(""); // Нужно будет потом его удалить или игнорировать 
             listAppTime = new List<TimeSpan>();
+            listAppStartTime = new List<DateTime>();
+            listAppEndTime = new List<DateTime>();
 
             buttonAutoMod.BackColor = Color.Green;  // Визуальное изменение кнопки
             buttonAutoMod.Enabled = false;
@@ -159,25 +164,19 @@ namespace TimeTrackerDesktop
 
             listAppName.RemoveAt(0);
             listAppTime.RemoveAt(0);
+            listAppStartTime.RemoveAt(0);
+            listAppEndTime.RemoveAt(0);
 
             MessageBox.Show(o.ToString());
 
-            
+            listAppCount = listAppName.Count;
 
-            
-            /*else
+            for (int i = 0; i < listAppCount; i++)
             {
-                
-                buttonAutoModIsStart = true;
-
-                //Сделлать добавление данных в БД и датагрид
-
-               *//* dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, startTime.TimeOfDay.ToString().Split('.')[0], endTime.TimeOfDay.ToString().Split('.')[0], time.ToString().Split('.')[0]);
-                _timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), textBoxNameForTimeline.Text, "" + startTime.TimeOfDay, "" + endTime.TimeOfDay, time.ToString().Split('.')[0], "");
-                textBoxNameForTimeline.Clear();*//*
-
-                // Реализовать вызов метода класса для добавления данных в БД, выше сделать работу через классы
-            }*/
+                dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), listAppName[i], listAppStartTime[i].TimeOfDay.ToString().Split('.')[0], listAppEndTime[i].TimeOfDay.ToString().Split('.')[0], listAppTime[i].ToString().Split('.')[0]);
+                //_timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), listAppName[i], "" + listAppStartTime[i].TimeOfDay, "" + listAppEndTime[i].TimeOfDay, listAppTime[i].ToString().Split('.')[0], "");
+                //Нужно сделать добавлеие в БД и сделать кнопки неактивными
+            }
 
         }
 
@@ -206,6 +205,9 @@ namespace TimeTrackerDesktop
                         endTime = DateTime.Now;
                         time = endTime - startTime;
                         listAppTime.Add(time);
+                        listAppEndTime.Add(endTime);
+                        listAppStartTime.Add(startTime);
+
                         timeGo = true;
                     }
                 };
@@ -217,7 +219,8 @@ namespace TimeTrackerDesktop
             endTime = DateTime.Now;
             time = endTime - startTime;
             listAppTime.Add(time);
-
+            listAppEndTime.Add(endTime);
+            listAppStartTime.Add(startTime);
         }
 
         private void button1_Click(object sender, EventArgs e)
