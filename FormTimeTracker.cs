@@ -60,6 +60,8 @@ namespace TimeTrackerDesktop
                 buttonCreateGraphic.Visible = false;
             }
 
+            button1.Enabled = false;
+
             var resultFunc = database.SelectFunctionUsing(string.Format("main.get_timers({0})", user.UserId));
             while (resultFunc.Read())
             {
@@ -155,27 +157,30 @@ namespace TimeTrackerDesktop
 
             buttonAutoMod.BackColor = Color.Green;  // Визуальное изменение кнопки
             buttonAutoMod.Enabled = false;
-            
+            buttonStartStopTimer.Enabled = false;
+            button1.Enabled = true;
+
             _tokenSource = new CancellationTokenSource();
             await Task.Run(() => GetApplicationAndTimeInfo(_tokenSource.Token), _tokenSource.Token);
 
             buttonAutoMod.BackColor = Color.White;  // Визуальное изменение кнопки
             buttonAutoMod.Enabled = true;
+            buttonStartStopTimer.Enabled = true;
+            button1.Enabled = false;
 
             listAppName.RemoveAt(0);
             listAppTime.RemoveAt(0);
             listAppStartTime.RemoveAt(0);
             listAppEndTime.RemoveAt(0);
 
-            MessageBox.Show(o.ToString());
-
             listAppCount = listAppName.Count;
 
             for (int i = 0; i < listAppCount; i++)
             {
+                _timer = new ClassTimer(database, user.UserId);
                 dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), listAppName[i], listAppStartTime[i].TimeOfDay.ToString().Split('.')[0], listAppEndTime[i].TimeOfDay.ToString().Split('.')[0], listAppTime[i].ToString().Split('.')[0]);
-                //_timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), listAppName[i], "" + listAppStartTime[i].TimeOfDay, "" + listAppEndTime[i].TimeOfDay, listAppTime[i].ToString().Split('.')[0], "");
-                //Нужно сделать добавлеие в БД и сделать кнопки неактивными
+                _timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), listAppName[i], "" + listAppStartTime[i].TimeOfDay, "" + listAppEndTime[i].TimeOfDay, listAppTime[i].ToString().Split('.')[0], listAppName[i]);
+                
             }
 
         }
