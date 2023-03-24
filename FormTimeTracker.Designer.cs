@@ -187,7 +187,7 @@
             this.buttonCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCreateReport.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateReport.Location = new System.Drawing.Point(6, 298);
+            this.buttonCreateReport.Location = new System.Drawing.Point(6, 338);
             this.buttonCreateReport.Name = "buttonCreateReport";
             this.buttonCreateReport.Size = new System.Drawing.Size(171, 54);
             this.buttonCreateReport.TabIndex = 11;
@@ -199,7 +199,7 @@
             this.buttonCreateGraphic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCreateGraphic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCreateGraphic.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 238);
+            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 278);
             this.buttonCreateGraphic.Name = "buttonCreateGraphic";
             this.buttonCreateGraphic.Size = new System.Drawing.Size(171, 54);
             this.buttonCreateGraphic.TabIndex = 10;
@@ -224,12 +224,13 @@
             this.buttonAutoHideMod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAutoHideMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAutoHideMod.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 142);
+            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 140);
             this.buttonAutoHideMod.Name = "buttonAutoHideMod";
             this.buttonAutoHideMod.Size = new System.Drawing.Size(171, 54);
             this.buttonAutoHideMod.TabIndex = 8;
-            this.buttonAutoHideMod.Text = "Автоматический режим (скрытный)";
+            this.buttonAutoHideMod.Text = "Автоматический режим (скрытный) \r\nСтарт";
             this.buttonAutoHideMod.UseVisualStyleBackColor = true;
+            this.buttonAutoHideMod.Click += new System.EventHandler(this.buttonAutoHideMod_Click);
             // 
             // buttonAutoMod
             // 
@@ -254,9 +255,11 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FormTimeTracker";
             this.Text = "Учет времени";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTimeTracker_FormClosed);
             this.Load += new System.EventHandler(this.FormTimeTracker_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

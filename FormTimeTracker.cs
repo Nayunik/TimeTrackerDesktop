@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 
 using System.Runtime.InteropServices;
@@ -32,17 +33,28 @@ namespace TimeTrackerDesktop
         private ClassTimer _timer;
 
         private CancellationTokenSource _tokenSource;
+        private CancellationTokenSource _tokenSource1;
 
         private List<string> listAppName;
         private List<TimeSpan> listAppTime;
         private List<DateTime> listAppStartTime;
         private List<DateTime> listAppEndTime;
 
+        private bool openForm = true;
+
         int o = 0;
 
         public FormTimeTracker()
         {
             InitializeComponent();
+
+            //Ниже указан код, который необходим для открытия формы по сочетанию клавиш 
+            HotKey h = new HotKey();
+
+            h.Key = Keys.F2;
+            h.KeyModifier = HotKey.KeyModifiers.Control; // это добавляет к основной кнопке комбинацию 
+            h.HotKeyPressed += this.onHK;
+            h.Handle = this.Handle;
         }
 
         private void FormTimeTracker_Load(object sender, EventArgs e)
@@ -159,6 +171,7 @@ namespace TimeTrackerDesktop
             buttonAutoMod.Enabled = false;
             buttonStartStopTimer.Enabled = false;
             button1.Enabled = true;
+            buttonAutoHideMod.Enabled = false;
 
             _tokenSource = new CancellationTokenSource();
             await Task.Run(() => GetApplicationAndTimeInfo(_tokenSource.Token), _tokenSource.Token);
@@ -167,6 +180,7 @@ namespace TimeTrackerDesktop
             buttonAutoMod.Enabled = true;
             buttonStartStopTimer.Enabled = true;
             button1.Enabled = false;
+            buttonAutoHideMod.Enabled = true;
 
             listAppName.RemoveAt(0);
             listAppTime.RemoveAt(0);
@@ -231,6 +245,21 @@ namespace TimeTrackerDesktop
         private void button1_Click(object sender, EventArgs e)
         {
             _tokenSource.Cancel();
+        }
+
+        private void onHK(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void buttonAutoHideMod_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void FormTimeTracker_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -40,7 +40,6 @@ namespace TimeTrackerDesktop
                         formTime.SetUser(user);
                         formTime.SetDB(dataBase);
                         formTime.ShowDialog();
-                        this.Close();
                     }
                     else
                     {
