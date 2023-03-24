@@ -44,6 +44,7 @@
             this.buttonLogin.TabIndex = 9;
             this.buttonLogin.Text = "Войти";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBox2
             // 
@@ -82,6 +83,7 @@
             this.Name = "FormEnterPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подтверждение пользователя";
+            this.Load += new System.EventHandler(this.FormEnterPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

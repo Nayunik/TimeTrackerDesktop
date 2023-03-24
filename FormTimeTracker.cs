@@ -32,17 +32,13 @@ namespace TimeTrackerDesktop
         private ClassDataBase database;
         private ClassTimer _timer;
 
-        private CancellationTokenSource _tokenSource;
-        private CancellationTokenSource _tokenSource1;
+        public CancellationTokenSource _tokenSource;
 
         private List<string> listAppName;
         private List<TimeSpan> listAppTime;
         private List<DateTime> listAppStartTime;
         private List<DateTime> listAppEndTime;
 
-        private bool openForm = true;
-
-        int o = 0;
 
         public FormTimeTracker()
         {
@@ -232,7 +228,7 @@ namespace TimeTrackerDesktop
                 };
 
                 activeWindowWatcher.Start();
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
 
             }
             endTime = DateTime.Now;
@@ -249,8 +245,7 @@ namespace TimeTrackerDesktop
 
         private void onHK(object sender, EventArgs e)
         {
-            this.Show();
-            _tokenSource.Cancel();
+            PasswordIsCorect();
         }
 
         private async void buttonAutoHideMod_Click(object sender, EventArgs e)
@@ -265,27 +260,15 @@ namespace TimeTrackerDesktop
             listAppStartTime = new List<DateTime>();
             listAppEndTime = new List<DateTime>();
 
-            buttonAutoMod.BackColor = Color.Green;  // Визуальное изменение кнопки
-            buttonAutoMod.Enabled = false;
-            buttonStartStopTimer.Enabled = false;
-            button1.Enabled = true;
-            buttonAutoHideMod.Enabled = false;
-
             _tokenSource = new CancellationTokenSource();
             await Task.Run(() => GetApplicationAndTimeInfo(_tokenSource.Token), _tokenSource.Token);
-
-            buttonAutoMod.BackColor = Color.White;  // Визуальное изменение кнопки
-            buttonAutoMod.Enabled = true;
-            buttonStartStopTimer.Enabled = true;
-            button1.Enabled = false;
-            buttonAutoHideMod.Enabled = true;
 
             listAppName.RemoveAt(0);
             listAppTime.RemoveAt(0);
             listAppStartTime.RemoveAt(0);
             listAppEndTime.RemoveAt(0);
 
-            listAppCount = listAppName.Count;
+            listAppCount = listAppName.Count - 1;
 
             for (int i = 0; i < listAppCount; i++)
             {
@@ -300,6 +283,30 @@ namespace TimeTrackerDesktop
         private void FormTimeTracker_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void PasswordIsCorect()
+        {
+            FormEnterPassword formEnterPass = new FormEnterPassword();
+            formEnterPass.SetFormTimeTracker(this);
+            formEnterPass.SetUserPassword(user.Password);
+            formEnterPass.Show();
+
+            /*if (formEnterPass.pasIsCorrect)
+            {
+                _tokenSource.Cancel();
+            }*/
+            
+        }
+
+        private void buttonCreateReport_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void buttonCreateReport_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

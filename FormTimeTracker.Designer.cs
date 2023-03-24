@@ -43,10 +43,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCreateReport = new System.Windows.Forms.Button();
-            this.buttonCreateGraphic = new System.Windows.Forms.Button();
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
+            this.buttonCreateGraphic = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -193,18 +193,7 @@
             this.buttonCreateReport.TabIndex = 11;
             this.buttonCreateReport.Text = "Сформировать отчет";
             this.buttonCreateReport.UseVisualStyleBackColor = true;
-            // 
-            // buttonCreateGraphic
-            // 
-            this.buttonCreateGraphic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateGraphic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCreateGraphic.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 278);
-            this.buttonCreateGraphic.Name = "buttonCreateGraphic";
-            this.buttonCreateGraphic.Size = new System.Drawing.Size(171, 54);
-            this.buttonCreateGraphic.TabIndex = 10;
-            this.buttonCreateGraphic.Text = "Сформировать график";
-            this.buttonCreateGraphic.UseVisualStyleBackColor = true;
+            this.buttonCreateReport.Click += new System.EventHandler(this.buttonCreateReport_Click_1);
             // 
             // buttonGoToAdminForm
             // 
@@ -245,6 +234,18 @@
             this.buttonAutoMod.UseVisualStyleBackColor = true;
             this.buttonAutoMod.Click += new System.EventHandler(this.buttonAutoMod_Click);
             // 
+            // buttonCreateGraphic
+            // 
+            this.buttonCreateGraphic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCreateGraphic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCreateGraphic.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 278);
+            this.buttonCreateGraphic.Name = "buttonCreateGraphic";
+            this.buttonCreateGraphic.Size = new System.Drawing.Size(171, 54);
+            this.buttonCreateGraphic.TabIndex = 10;
+            this.buttonCreateGraphic.Text = "Сформировать график";
+            this.buttonCreateGraphic.UseVisualStyleBackColor = true;
+            // 
             // FormTimeTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,12 +283,12 @@
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonCreateReport;
-        private System.Windows.Forms.Button buttonCreateGraphic;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEndTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDur;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCreateGraphic;
     }
 }
