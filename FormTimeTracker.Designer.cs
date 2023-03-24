@@ -224,7 +224,7 @@
             this.buttonAutoHideMod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAutoHideMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAutoHideMod.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 140);
+            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 174);
             this.buttonAutoHideMod.Name = "buttonAutoHideMod";
             this.buttonAutoHideMod.Size = new System.Drawing.Size(171, 54);
             this.buttonAutoHideMod.TabIndex = 8;

@@ -250,11 +250,51 @@ namespace TimeTrackerDesktop
         private void onHK(object sender, EventArgs e)
         {
             this.Show();
+            _tokenSource.Cancel();
         }
 
-        private void buttonAutoHideMod_Click(object sender, EventArgs e)
+        private async void buttonAutoHideMod_Click(object sender, EventArgs e)
         {
             this.Hide();
+
+            int listAppCount;
+
+            listAppName = new List<string>();
+            listAppName.Add(""); // Нужно будет потом его удалить или игнорировать 
+            listAppTime = new List<TimeSpan>();
+            listAppStartTime = new List<DateTime>();
+            listAppEndTime = new List<DateTime>();
+
+            buttonAutoMod.BackColor = Color.Green;  // Визуальное изменение кнопки
+            buttonAutoMod.Enabled = false;
+            buttonStartStopTimer.Enabled = false;
+            button1.Enabled = true;
+            buttonAutoHideMod.Enabled = false;
+
+            _tokenSource = new CancellationTokenSource();
+            await Task.Run(() => GetApplicationAndTimeInfo(_tokenSource.Token), _tokenSource.Token);
+
+            buttonAutoMod.BackColor = Color.White;  // Визуальное изменение кнопки
+            buttonAutoMod.Enabled = true;
+            buttonStartStopTimer.Enabled = true;
+            button1.Enabled = false;
+            buttonAutoHideMod.Enabled = true;
+
+            listAppName.RemoveAt(0);
+            listAppTime.RemoveAt(0);
+            listAppStartTime.RemoveAt(0);
+            listAppEndTime.RemoveAt(0);
+
+            listAppCount = listAppName.Count;
+
+            for (int i = 0; i < listAppCount; i++)
+            {
+                _timer = new ClassTimer(database, user.UserId);
+                dataGridView1.Rows.Add(DateTime.Now.Date.ToShortDateString(), listAppName[i], listAppStartTime[i].TimeOfDay.ToString().Split('.')[0], listAppEndTime[i].TimeOfDay.ToString().Split('.')[0], listAppTime[i].ToString().Split('.')[0]);
+                _timer.InsertTimerInfo(user.UserId, DateTime.Now.Date.ToShortDateString(), listAppName[i], "" + listAppStartTime[i].TimeOfDay, "" + listAppEndTime[i].TimeOfDay, listAppTime[i].ToString().Split('.')[0], listAppName[i]);
+
+            }
+
         }
 
         private void FormTimeTracker_FormClosed(object sender, FormClosedEventArgs e)
