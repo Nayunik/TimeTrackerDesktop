@@ -99,7 +99,7 @@
             this.buttonClearAll.Location = new System.Drawing.Point(348, 439);
             this.buttonClearAll.Name = "buttonClearAll";
             this.buttonClearAll.Size = new System.Drawing.Size(195, 35);
-            this.buttonClearAll.TabIndex = 24;
+            this.buttonClearAll.TabIndex = 9;
             this.buttonClearAll.Text = "Очистить все поля";
             this.buttonClearAll.UseVisualStyleBackColor = true;
             this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
@@ -112,7 +112,7 @@
             this.textBox5.Location = new System.Drawing.Point(317, 281);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(250, 27);
-            this.textBox5.TabIndex = 23;
+            this.textBox5.TabIndex = 6;
             // 
             // label5
             // 
@@ -144,7 +144,7 @@
             this.textBox6.Location = new System.Drawing.Point(317, 348);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(250, 27);
-            this.textBox6.TabIndex = 20;
+            this.textBox6.TabIndex = 7;
             // 
             // textBox8
             // 
@@ -154,7 +154,7 @@
             this.textBox8.Location = new System.Drawing.Point(317, 84);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(250, 27);
-            this.textBox8.TabIndex = 19;
+            this.textBox8.TabIndex = 3;
             // 
             // label9
             // 
@@ -175,7 +175,7 @@
             this.textBox7.Location = new System.Drawing.Point(317, 149);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(250, 27);
-            this.textBox7.TabIndex = 17;
+            this.textBox7.TabIndex = 4;
             // 
             // label8
             // 
@@ -207,7 +207,7 @@
             this.textBox4.Location = new System.Drawing.Point(317, 216);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(250, 27);
-            this.textBox4.TabIndex = 11;
+            this.textBox4.TabIndex = 5;
             // 
             // textBox3
             // 
@@ -218,7 +218,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(250, 27);
-            this.textBox3.TabIndex = 9;
+            this.textBox3.TabIndex = 2;
             // 
             // label4
             // 
@@ -239,7 +239,7 @@
             this.buttonRegister.Location = new System.Drawing.Point(348, 389);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(195, 35);
-            this.buttonRegister.TabIndex = 6;
+            this.buttonRegister.TabIndex = 8;
             this.buttonRegister.Text = "Зарегистрироваться";
             this.buttonRegister.UseVisualStyleBackColor = true;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
@@ -253,7 +253,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(250, 27);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -263,7 +263,7 @@
             this.textBox1.Location = new System.Drawing.Point(28, 149);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 27);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 0;
             // 
             // labelGoToLogForm
             // 
@@ -273,7 +273,7 @@
             this.labelGoToLogForm.Location = new System.Drawing.Point(355, 488);
             this.labelGoToLogForm.Name = "labelGoToLogForm";
             this.labelGoToLogForm.Size = new System.Drawing.Size(183, 15);
-            this.labelGoToLogForm.TabIndex = 3;
+            this.labelGoToLogForm.TabIndex = 10;
             this.labelGoToLogForm.Text = "Перейти к окну авторизации";
             this.labelGoToLogForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelGoToLogForm.Click += new System.EventHandler(this.labelGoToLogForm_Click);
