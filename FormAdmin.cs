@@ -61,11 +61,13 @@ namespace TimeTrackerDesktop
             {
                 buttonChange.Enabled = true;
                 buttonDeleteBlock.Enabled = true;
+                buttonBlockUser.Enabled = true;
             }
             else
             {
                 buttonChange.Enabled = false;
                 buttonDeleteBlock.Enabled = false;
+                buttonBlockUser.Enabled = false;
             }
         }
     }

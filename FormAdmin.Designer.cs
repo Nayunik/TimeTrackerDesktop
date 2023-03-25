@@ -40,6 +40,7 @@
             this.ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonDeleteBlock = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
+            this.buttonBlockUser = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.buttonBlockUser);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.buttonDeleteBlock);
             this.panel1.Controls.Add(this.buttonChange);
@@ -131,7 +133,7 @@
             this.buttonDeleteBlock.Enabled = false;
             this.buttonDeleteBlock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeleteBlock.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteBlock.Location = new System.Drawing.Point(204, 477);
+            this.buttonDeleteBlock.Location = new System.Drawing.Point(405, 477);
             this.buttonDeleteBlock.Name = "buttonDeleteBlock";
             this.buttonDeleteBlock.Size = new System.Drawing.Size(195, 35);
             this.buttonDeleteBlock.TabIndex = 24;
@@ -151,6 +153,19 @@
             this.buttonChange.Text = "Редактировать";
             this.buttonChange.UseVisualStyleBackColor = true;
             this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
+            // 
+            // buttonBlockUser
+            // 
+            this.buttonBlockUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBlockUser.Enabled = false;
+            this.buttonBlockUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonBlockUser.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBlockUser.Location = new System.Drawing.Point(204, 477);
+            this.buttonBlockUser.Name = "buttonBlockUser";
+            this.buttonBlockUser.Size = new System.Drawing.Size(195, 35);
+            this.buttonBlockUser.TabIndex = 26;
+            this.buttonBlockUser.Text = "Блокировать";
+            this.buttonBlockUser.UseVisualStyleBackColor = true;
             // 
             // FormAdmin
             // 
@@ -184,5 +199,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMiddlename;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmail;
+        private System.Windows.Forms.Button buttonBlockUser;
     }
 }

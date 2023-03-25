@@ -292,11 +292,6 @@ namespace TimeTrackerDesktop
             formEnterPass.SetUserPassword(user.Password);
             formEnterPass.Show();
 
-            /*if (formEnterPass.pasIsCorrect)
-            {
-                _tokenSource.Cancel();
-            }*/
-            
         }
 
         private void buttonCreateReport_Click(object sender, EventArgs e)
