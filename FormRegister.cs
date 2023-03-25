@@ -42,6 +42,7 @@ namespace TimeTrackerDesktop
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
+            string script = "";
             //Проверка, что поля не пустые
             if(string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox5.Text) || string.IsNullOrEmpty(textBox6.Text) || string.IsNullOrEmpty(textBox7.Text) || string.IsNullOrEmpty(textBox8.Text))
             {
@@ -70,8 +71,17 @@ namespace TimeTrackerDesktop
                 return;
             }
             res.Close();
-
-            MessageBox.Show("GOOD");
+            script += "\r\n\r\ndo $$\r\n declare\r\nv_iduser int8;\r\nbegin\r\n insert into auth.\"user\" (firstname, lastname, middlename, phone, email, login, password) values (\'" + textBox7.Text.Trim() + "\',\'" + textBox8.Text.Trim() + "\', \'" + textBox4.Text.Trim() + "\', \'" + textBox5.Text.Trim() + "\', \'" + textBox6.Text.Trim() + "\', \'" + textBox1.Text.Trim() + "\', \'" + textBox2.Text.Trim() + "\') returning user_id into v_iduser;\r\n";
+            script += "\r\ninsert into main.\"user\" (firstname, lastname, middlename, phone, email) values(\'" + textBox7.Text.Trim() + "\',\'" + textBox8.Text.Trim() + "\', \'" + textBox4.Text.Trim() + "\', \'" + textBox5.Text.Trim() + "\', \'" + textBox6.Text.Trim() + "\');";
+            script += "\r\ninsert into auth.user_in_role (user_id, role_id) values (v_iduser, 2);";
+            script += "\r\ninsert into main.user_in_role (user_id, role_id) values (v_iduser, 2);";
+            script += "\r\nend;\r\n$$\r\n";
+            if (!string.IsNullOrEmpty(script))
+            {
+                database.ExecuteScript(script);
+                MessageBox.Show("Пользователь создан!");
+            }
+            
         }
 
         private void buttonClearAll_Click(object sender, EventArgs e)
