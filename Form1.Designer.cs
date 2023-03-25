@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelForgotPass = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -54,7 +53,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.labelForgotPass);
             this.panel1.Controls.Add(this.buttonLogin);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
@@ -66,18 +64,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 252);
             this.panel1.TabIndex = 1;
-            // 
-            // labelForgotPass
-            // 
-            this.labelForgotPass.AutoSize = true;
-            this.labelForgotPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelForgotPass.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelForgotPass.Location = new System.Drawing.Point(186, 228);
-            this.labelForgotPass.Name = "labelForgotPass";
-            this.labelForgotPass.Size = new System.Drawing.Size(101, 15);
-            this.labelForgotPass.TabIndex = 7;
-            this.labelForgotPass.Text = "Забыли пароль?";
-            this.labelForgotPass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonLogin
             // 
@@ -118,7 +104,7 @@
             this.labelGoToRegForm.AutoSize = true;
             this.labelGoToRegForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelGoToRegForm.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelGoToRegForm.Location = new System.Drawing.Point(3, 228);
+            this.labelGoToRegForm.Location = new System.Drawing.Point(65, 225);
             this.labelGoToRegForm.Name = "labelGoToRegForm";
             this.labelGoToRegForm.Size = new System.Drawing.Size(160, 15);
             this.labelGoToRegForm.TabIndex = 3;
@@ -159,7 +145,7 @@
             this.MaximizeBox = false;
             this.Name = "FormAuth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Авторизация";
+            this.Text = "Вход";
             this.Load += new System.EventHandler(this.FormAuth_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -177,7 +163,6 @@
         private System.Windows.Forms.Label labelGoToRegForm;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelForgotPass;
     }
 }
 
