@@ -52,7 +52,6 @@ namespace TimeTrackerDesktop.AuthClasses
             }
         }
 
-        //Начать от сюда доделвать
         public ClassUserAuht(string login, ClassDataBase dataBase)
         {
             this.dataBase = dataBase;

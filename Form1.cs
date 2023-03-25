@@ -76,7 +76,9 @@ namespace TimeTrackerDesktop
             this.Hide();
             FormRegister reg = new FormRegister();
             reg.Owner = this;
+            reg.SetDB(dataBase);
             reg.ShowDialog();
+            
         }
     }
 }
