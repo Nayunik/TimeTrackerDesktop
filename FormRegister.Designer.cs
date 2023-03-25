@@ -102,6 +102,7 @@
             this.buttonClearAll.TabIndex = 24;
             this.buttonClearAll.Text = "Очистить все поля";
             this.buttonClearAll.UseVisualStyleBackColor = true;
+            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
             // 
             // textBox5
             // 

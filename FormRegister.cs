@@ -38,5 +38,17 @@ namespace TimeTrackerDesktop
         {
 
         }
+
+        private void buttonClearAll_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
+        }
     }
 }
