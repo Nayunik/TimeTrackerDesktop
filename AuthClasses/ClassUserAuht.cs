@@ -27,7 +27,7 @@ namespace TimeTrackerDesktop.AuthClasses
         {
             this.dataBase = dataBase;
             this.userId = GetUserId(login, password);
-            this.isActive = UserIsActive(login, password);
+            this.isActive = UserIsActive(login);
 
             if (userId != -1)
             {
@@ -56,6 +56,7 @@ namespace TimeTrackerDesktop.AuthClasses
         {
             this.dataBase = dataBase;
             this.userId = GetUserId(login);
+            this.isActive = UserIsActive(login);
 
             if (userId != -1)
             {
@@ -142,7 +143,7 @@ namespace TimeTrackerDesktop.AuthClasses
             }
         }
 
-        public bool UserIsActive(string login, string password)
+        public bool UserIsActive(string login)
         {
             bool result = false;
 
@@ -152,7 +153,7 @@ namespace TimeTrackerDesktop.AuthClasses
             }
             else
             {
-                var resultFunction = dataBase.SelectFunctionUsing("auth.user_is_active(\'" + login + "\', \'" + password + "\')");
+                var resultFunction = dataBase.SelectFunctionUsing("auth.user_is_active(\'" + login + "\')");
                 resultFunction.Read();
                 if (resultFunction != null)
                 {
