@@ -17,6 +17,7 @@ namespace TimeTrackerDesktop
     {
         private ClassUserAuht user;
         private ClassDataBase database;
+        private FormAdmin adminForm;
 
         public FormChangeUser()
         {
@@ -61,11 +62,15 @@ namespace TimeTrackerDesktop
             this.database = _db;
         }
 
+        public void SetAdminForm (FormAdmin adminForm)
+        {
+            this.adminForm = adminForm;
+        }
+
         private void buttonClearAll_Click(object sender, EventArgs e)
         {
             textBoxEmail.Clear();
             textBoxLastname.Clear();
-            textBoxLogin.Clear();
             textBoxMiddlename.Clear();
             textBoxName.Clear();
             textBoxPhone.Clear();
@@ -77,6 +82,7 @@ namespace TimeTrackerDesktop
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            string script = "";
             if (string.IsNullOrEmpty(textBoxEmail.Text))
             {
                 MessageBox.Show("Заполните адрес почты!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,6 +118,11 @@ namespace TimeTrackerDesktop
                 MessageBox.Show("Неверная информация о почте!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else if (checkedListBox1.CheckedIndices.Count == 0)
+            {
+                MessageBox.Show("Выбертие хотя бы одну роль!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             else 
             {
                 if (textBoxPassword1.Text != textBoxPassword2.Text)
@@ -123,15 +134,20 @@ namespace TimeTrackerDesktop
                 {
                     if (!string.IsNullOrEmpty(textBoxPassword1.Text) && !string.IsNullOrEmpty(textBoxPassword2.Text))
                     {
-                        //Необходимо изменение пользователя и пароля!
+                        //Изменение пользователя и пароля!
+                        database.ExecuteScript("select auth.change_user_info0(\'" + textBoxName.Text.Trim() + "\',\'" + textBoxLastname.Text.Trim() + "\', \'" + textBoxMiddlename.Text.Trim() + "\', \'" + textBoxPhone.Text.Trim() + "\', \'" + textBoxEmail.Text.Trim() + "\', \'" + textBoxPassword1.Text.Trim() + "\', " + user.UserId.ToString() + ");");
                     }
                     else
                     {
-                        //Необходимо изменение только пользователя
+                        //Изменение только пользователя
+                        database.ExecuteScript("select auth.change_user_info1(\'" + textBoxName.Text.Trim() + "\', \'" + textBoxLastname.Text.Trim() + "\', \'" + textBoxMiddlename.Text.Trim() + "\', \'" + textBoxPhone.Text.Trim() + "\', \'" + textBoxEmail.Text.Trim() + "\', " + user.UserId.ToString() + ");");
+
                     }
-                    
+                    var o = checkedListBox1.GetItemChecked(0);
+                    database.ExecuteScript("select auth.change_user_in_roles(" + checkedListBox1.GetItemChecked(0) + ", " + checkedListBox1.GetItemChecked(1) + ", " + checkedListBox1.GetItemChecked(2) + ", " + checkedListBox1.GetItemChecked(3) + ", " + user.UserId.ToString() + ")");
                 }
-                
+                adminForm.UsersUpdateInfo();
+
             }
 
 

@@ -106,7 +106,7 @@
             this.checkedListBox1.Location = new System.Drawing.Point(317, 279);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(250, 90);
-            this.checkedListBox1.TabIndex = 29;
+            this.checkedListBox1.TabIndex = 8;
             // 
             // textBoxPassword1
             // 
@@ -117,7 +117,7 @@
             this.textBoxPassword1.Name = "textBoxPassword1";
             this.textBoxPassword1.PasswordChar = '*';
             this.textBoxPassword1.Size = new System.Drawing.Size(250, 27);
-            this.textBoxPassword1.TabIndex = 28;
+            this.textBoxPassword1.TabIndex = 3;
             // 
             // label3
             // 
@@ -150,7 +150,7 @@
             this.textBoxPassword2.Name = "textBoxPassword2";
             this.textBoxPassword2.PasswordChar = '*';
             this.textBoxPassword2.Size = new System.Drawing.Size(250, 27);
-            this.textBoxPassword2.TabIndex = 25;
+            this.textBoxPassword2.TabIndex = 4;
             // 
             // buttonClearAll
             // 
@@ -160,7 +160,7 @@
             this.buttonClearAll.Location = new System.Drawing.Point(204, 429);
             this.buttonClearAll.Name = "buttonClearAll";
             this.buttonClearAll.Size = new System.Drawing.Size(195, 35);
-            this.buttonClearAll.TabIndex = 24;
+            this.buttonClearAll.TabIndex = 10;
             this.buttonClearAll.Text = "Очистить все поля";
             this.buttonClearAll.UseVisualStyleBackColor = true;
             this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
@@ -173,7 +173,7 @@
             this.textBoxPhone.Location = new System.Drawing.Point(31, 151);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(250, 27);
-            this.textBoxPhone.TabIndex = 23;
+            this.textBoxPhone.TabIndex = 1;
             // 
             // label5
             // 
@@ -205,7 +205,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(31, 216);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(250, 27);
-            this.textBoxEmail.TabIndex = 20;
+            this.textBoxEmail.TabIndex = 2;
             // 
             // textBoxLastname
             // 
@@ -215,7 +215,7 @@
             this.textBoxLastname.Location = new System.Drawing.Point(317, 84);
             this.textBoxLastname.Name = "textBoxLastname";
             this.textBoxLastname.Size = new System.Drawing.Size(250, 27);
-            this.textBoxLastname.TabIndex = 19;
+            this.textBoxLastname.TabIndex = 5;
             // 
             // label9
             // 
@@ -236,7 +236,7 @@
             this.textBoxName.Location = new System.Drawing.Point(317, 149);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(250, 27);
-            this.textBoxName.TabIndex = 17;
+            this.textBoxName.TabIndex = 6;
             // 
             // label8
             // 
@@ -268,7 +268,7 @@
             this.textBoxMiddlename.Location = new System.Drawing.Point(317, 216);
             this.textBoxMiddlename.Name = "textBoxMiddlename";
             this.textBoxMiddlename.Size = new System.Drawing.Size(250, 27);
-            this.textBoxMiddlename.TabIndex = 11;
+            this.textBoxMiddlename.TabIndex = 7;
             // 
             // buttonSave
             // 
@@ -278,7 +278,7 @@
             this.buttonSave.Location = new System.Drawing.Point(204, 388);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(195, 35);
-            this.buttonSave.TabIndex = 6;
+            this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -292,7 +292,7 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.ReadOnly = true;
             this.textBoxLogin.Size = new System.Drawing.Size(250, 27);
-            this.textBoxLogin.TabIndex = 4;
+            this.textBoxLogin.TabIndex = 0;
             // 
             // label2
             // 

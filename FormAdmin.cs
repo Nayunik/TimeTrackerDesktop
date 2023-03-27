@@ -29,6 +29,12 @@ namespace TimeTrackerDesktop
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
+            UsersUpdateInfo();
+        }
+
+        public void UsersUpdateInfo ()
+        {
+            dataGridView1.Rows.Clear();
             var resultFunc = database.SelectFunctionUsing("auth.get_users()");
             while (resultFunc.Read())
             {
@@ -52,6 +58,7 @@ namespace TimeTrackerDesktop
             FormChangeUser formChangeUser = new FormChangeUser();
             formChangeUser.SetUser(selectedUser);
             formChangeUser.SetDB(database);
+            formChangeUser.SetAdminForm(this);
             formChangeUser.ShowDialog();
         }
 
