@@ -75,7 +75,6 @@ namespace TimeTrackerDesktop
             if (dataGridView1.CurrentCell.ColumnIndex == 0)
             {
                 buttonChange.Enabled = true;
-                buttonDeleteBlock.Enabled = true;
                 buttonBlockUser.Enabled = true;
 
                 string selectedLogin = dataGridView1.SelectedCells[0].Value.ToString();
@@ -92,7 +91,6 @@ namespace TimeTrackerDesktop
             else
             {
                 buttonChange.Enabled = false;
-                buttonDeleteBlock.Enabled = false;
                 buttonBlockUser.Enabled = false;
             }
         }
@@ -116,5 +114,7 @@ namespace TimeTrackerDesktop
 
             UsersUpdateInfo();
         }
+
+        
     }
 }

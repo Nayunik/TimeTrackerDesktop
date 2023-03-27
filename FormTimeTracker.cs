@@ -61,11 +61,11 @@ namespace TimeTrackerDesktop
             }
             if (!user.Roles.Contains(3))
             {
-                buttonCreateReport.Visible = false;
+                buttonGoToFormAnalyze.Visible = false;
             }
             if(!user.Roles.Contains(4))
             {
-                buttonCreateGraphic.Visible = false;
+                buttonGoToFormAnalyze.Visible = false;
             }
 
             button1.Enabled = false;
@@ -294,14 +294,9 @@ namespace TimeTrackerDesktop
 
         }
 
-        private void buttonCreateReport_Click(object sender, EventArgs e)
+        private void buttonGoToFormAnalyze_Click(object sender, EventArgs e)
         {
-           
-        }
 
-        private void buttonCreateReport_Click_1(object sender, EventArgs e)
-        {
-            
         }
     }
 }

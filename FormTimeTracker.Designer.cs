@@ -42,11 +42,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonCreateReport = new System.Windows.Forms.Button();
+            this.buttonGoToFormAnalyze = new System.Windows.Forms.Button();
             this.buttonGoToAdminForm = new System.Windows.Forms.Button();
             this.buttonAutoHideMod = new System.Windows.Forms.Button();
             this.buttonAutoMod = new System.Windows.Forms.Button();
-            this.buttonCreateGraphic = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -159,8 +158,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.buttonCreateReport);
-            this.panel2.Controls.Add(this.buttonCreateGraphic);
+            this.panel2.Controls.Add(this.buttonGoToFormAnalyze);
             this.panel2.Controls.Add(this.buttonGoToAdminForm);
             this.panel2.Controls.Add(this.buttonAutoHideMod);
             this.panel2.Controls.Add(this.buttonAutoMod);
@@ -182,25 +180,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonCreateReport
+            // buttonGoToFormAnalyze
             // 
-            this.buttonCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCreateReport.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateReport.Location = new System.Drawing.Point(6, 338);
-            this.buttonCreateReport.Name = "buttonCreateReport";
-            this.buttonCreateReport.Size = new System.Drawing.Size(171, 54);
-            this.buttonCreateReport.TabIndex = 11;
-            this.buttonCreateReport.Text = "Сформировать отчет";
-            this.buttonCreateReport.UseVisualStyleBackColor = true;
-            this.buttonCreateReport.Click += new System.EventHandler(this.buttonCreateReport_Click_1);
+            this.buttonGoToFormAnalyze.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGoToFormAnalyze.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonGoToFormAnalyze.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGoToFormAnalyze.Location = new System.Drawing.Point(6, 210);
+            this.buttonGoToFormAnalyze.Name = "buttonGoToFormAnalyze";
+            this.buttonGoToFormAnalyze.Size = new System.Drawing.Size(171, 54);
+            this.buttonGoToFormAnalyze.TabIndex = 10;
+            this.buttonGoToFormAnalyze.Text = "Аналитика";
+            this.buttonGoToFormAnalyze.UseVisualStyleBackColor = true;
+            this.buttonGoToFormAnalyze.Click += new System.EventHandler(this.buttonGoToFormAnalyze_Click);
             // 
             // buttonGoToAdminForm
             // 
             this.buttonGoToAdminForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonGoToAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGoToAdminForm.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGoToAdminForm.Location = new System.Drawing.Point(6, 488);
+            this.buttonGoToAdminForm.Location = new System.Drawing.Point(6, 279);
             this.buttonGoToAdminForm.Name = "buttonGoToAdminForm";
             this.buttonGoToAdminForm.Size = new System.Drawing.Size(171, 54);
             this.buttonGoToAdminForm.TabIndex = 9;
@@ -213,7 +211,7 @@
             this.buttonAutoHideMod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAutoHideMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAutoHideMod.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 174);
+            this.buttonAutoHideMod.Location = new System.Drawing.Point(6, 140);
             this.buttonAutoHideMod.Name = "buttonAutoHideMod";
             this.buttonAutoHideMod.Size = new System.Drawing.Size(171, 54);
             this.buttonAutoHideMod.TabIndex = 8;
@@ -233,18 +231,6 @@
             this.buttonAutoMod.Text = "Автоматический режим\r\nСтарт";
             this.buttonAutoMod.UseVisualStyleBackColor = true;
             this.buttonAutoMod.Click += new System.EventHandler(this.buttonAutoMod_Click);
-            // 
-            // buttonCreateGraphic
-            // 
-            this.buttonCreateGraphic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateGraphic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCreateGraphic.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCreateGraphic.Location = new System.Drawing.Point(6, 278);
-            this.buttonCreateGraphic.Name = "buttonCreateGraphic";
-            this.buttonCreateGraphic.Size = new System.Drawing.Size(171, 54);
-            this.buttonCreateGraphic.TabIndex = 10;
-            this.buttonCreateGraphic.Text = "Сформировать график";
-            this.buttonCreateGraphic.UseVisualStyleBackColor = true;
             // 
             // FormTimeTracker
             // 
@@ -282,13 +268,12 @@
         private System.Windows.Forms.TextBox textBoxNameForTimeline;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonCreateReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEndTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDur;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button buttonCreateGraphic;
+        private System.Windows.Forms.Button buttonGoToFormAnalyze;
     }
 }
