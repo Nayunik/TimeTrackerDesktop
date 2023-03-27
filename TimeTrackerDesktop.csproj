@@ -134,6 +134,12 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAnalyze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnalyze.Designer.cs">
+      <DependentUpon>FormAnalyze.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChangeUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnalyze.resx">
+      <DependentUpon>FormAnalyze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChangeUser.resx">
       <DependentUpon>FormChangeUser.cs</DependentUpon>

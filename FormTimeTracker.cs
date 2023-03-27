@@ -1,4 +1,5 @@
 ﻿using ActiveWindow.BLL.ActiveWindow;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -282,7 +283,8 @@ namespace TimeTrackerDesktop
 
         private void FormTimeTracker_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+
+            System.Windows.Forms.Application.Exit();
         }
 
         private void PasswordIsCorect()
@@ -296,7 +298,14 @@ namespace TimeTrackerDesktop
 
         private void buttonGoToFormAnalyze_Click(object sender, EventArgs e)
         {
-
+            
+            FormAnalyze formAnalyze = new FormAnalyze();
+            formAnalyze.Owner = this;
+            formAnalyze.SetUser(user);
+            formAnalyze.SetDB(database);
+            
+            formAnalyze.ShowDialog();
+            
         }
     }
 }
