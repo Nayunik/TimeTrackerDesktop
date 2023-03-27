@@ -41,7 +41,6 @@
             this.ColumnMiddlename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDisabled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -94,8 +93,7 @@
             this.ColumnFirstname,
             this.ColumnMiddlename,
             this.ColumnPhone,
-            this.ColumnEmail,
-            this.ColumnDisabled});
+            this.ColumnEmail});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -139,42 +137,42 @@
             this.ColumnLogin.HeaderText = "Login";
             this.ColumnLogin.Name = "ColumnLogin";
             this.ColumnLogin.ReadOnly = true;
+            this.ColumnLogin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColumnLastname
             // 
             this.ColumnLastname.HeaderText = "Фамилия";
             this.ColumnLastname.Name = "ColumnLastname";
             this.ColumnLastname.ReadOnly = true;
+            this.ColumnLastname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColumnFirstname
             // 
             this.ColumnFirstname.HeaderText = "Имя";
             this.ColumnFirstname.Name = "ColumnFirstname";
             this.ColumnFirstname.ReadOnly = true;
+            this.ColumnFirstname.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColumnMiddlename
             // 
             this.ColumnMiddlename.HeaderText = "Отчество";
             this.ColumnMiddlename.Name = "ColumnMiddlename";
             this.ColumnMiddlename.ReadOnly = true;
+            this.ColumnMiddlename.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColumnPhone
             // 
             this.ColumnPhone.HeaderText = "Телефон";
             this.ColumnPhone.Name = "ColumnPhone";
             this.ColumnPhone.ReadOnly = true;
+            this.ColumnPhone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColumnEmail
             // 
             this.ColumnEmail.HeaderText = "Эл. почта";
             this.ColumnEmail.Name = "ColumnEmail";
             this.ColumnEmail.ReadOnly = true;
-            // 
-            // ColumnDisabled
-            // 
-            this.ColumnDisabled.HeaderText = "Заблокирован";
-            this.ColumnDisabled.Name = "ColumnDisabled";
-            this.ColumnDisabled.ReadOnly = true;
+            this.ColumnEmail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FormAdmin
             // 
@@ -209,6 +207,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMiddlename;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDisabled;
     }
 }

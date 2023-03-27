@@ -101,8 +101,20 @@ namespace TimeTrackerDesktop
         {
             string selectedLogin = dataGridView1.SelectedCells[0].Value.ToString();
             ClassUserAuht selectedUser = new ClassUserAuht(selectedLogin, database);
-            
-            
+
+            if (!selectedUser.IsActive)
+            {
+                database.ExecuteScript("select auth.block_user(" + selectedUser.UserId + ",false);");
+                buttonBlockUser.Text = "Блокировать";
+            }
+            else
+            {
+                database.ExecuteScript("select auth.block_user(" + selectedUser.UserId + ",true);");
+                buttonBlockUser.Text = "Разблокировать";
+                
+            }
+
+            UsersUpdateInfo();
         }
     }
 }
