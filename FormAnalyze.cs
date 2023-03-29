@@ -64,6 +64,7 @@ namespace TimeTrackerDesktop
             comboBox1.ResetText();
             textBoxDateEnd.Text = string.Empty;
             textBoxDateStart.Text = string.Empty;
+            dataGridView1.Refresh();
         }
 
         private void buttonCreateReport_Click(object sender, EventArgs e)
@@ -132,6 +133,9 @@ namespace TimeTrackerDesktop
                         }
                         
                     }
+                    break;
+                default:
+                    MessageBox.Show("Неизвестный вариант графика!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
             
