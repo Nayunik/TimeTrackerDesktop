@@ -38,15 +38,15 @@
             this.ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonClearFilter = new System.Windows.Forms.Button();
-            this.buttonExecFilter = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxDateStart = new System.Windows.Forms.TextBox();
-            this.textBoxDateEnd = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxDateEnd = new System.Windows.Forms.TextBox();
+            this.textBoxDateStart = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonExecFilter = new System.Windows.Forms.Button();
+            this.buttonClearFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,7 +55,6 @@
             // buttonCreateReport
             // 
             this.buttonCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCreateReport.Enabled = false;
             this.buttonCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCreateReport.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCreateReport.Location = new System.Drawing.Point(4, 478);
@@ -79,14 +78,13 @@
             this.ColumnPhone,
             this.ColumnEmail});
             this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(597, 468);
+            this.dataGridView1.Size = new System.Drawing.Size(604, 468);
             this.dataGridView1.TabIndex = 26;
             // 
             // ColumnLogin
@@ -159,62 +157,38 @@
             this.panel2.TabIndex = 28;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // buttonClearFilter
+            // label4
             // 
-            this.buttonClearFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClearFilter.Enabled = false;
-            this.buttonClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonClearFilter.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClearFilter.Location = new System.Drawing.Point(406, 68);
-            this.buttonClearFilter.Name = "buttonClearFilter";
-            this.buttonClearFilter.Size = new System.Drawing.Size(92, 39);
-            this.buttonClearFilter.TabIndex = 27;
-            this.buttonClearFilter.Text = "Сбросить фильтры";
-            this.buttonClearFilter.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(89, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 19);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Вариант отчета:";
             // 
-            // buttonExecFilter
+            // label3
             // 
-            this.buttonExecFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExecFilter.Enabled = false;
-            this.buttonExecFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonExecFilter.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExecFilter.Location = new System.Drawing.Point(406, 22);
-            this.buttonExecFilter.Name = "buttonExecFilter";
-            this.buttonExecFilter.Size = new System.Drawing.Size(92, 39);
-            this.buttonExecFilter.TabIndex = 28;
-            this.buttonExecFilter.Text = "Применить фильтры";
-            this.buttonExecFilter.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(90, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 19);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Дата:";
             // 
-            // label1
+            // comboBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(137, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 19);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "С:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(259, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 19);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "ПО:";
-            // 
-            // textBoxDateStart
-            // 
-            this.textBoxDateStart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDateStart.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDateStart.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxDateStart.Location = new System.Drawing.Point(160, 75);
-            this.textBoxDateStart.Multiline = true;
-            this.textBoxDateStart.Name = "textBoxDateStart";
-            this.textBoxDateStart.Size = new System.Drawing.Size(98, 26);
-            this.textBoxDateStart.TabIndex = 31;
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Пользователь - Приложение",
+            "Пользователь - День"});
+            this.comboBox1.Location = new System.Drawing.Point(222, 26);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(169, 23);
+            this.comboBox1.TabIndex = 33;
             // 
             // textBoxDateEnd
             // 
@@ -227,35 +201,61 @@
             this.textBoxDateEnd.Size = new System.Drawing.Size(98, 26);
             this.textBoxDateEnd.TabIndex = 32;
             // 
-            // comboBox1
+            // textBoxDateStart
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(222, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 27);
-            this.comboBox1.TabIndex = 33;
+            this.textBoxDateStart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxDateStart.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxDateStart.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxDateStart.Location = new System.Drawing.Point(160, 75);
+            this.textBoxDateStart.Multiline = true;
+            this.textBoxDateStart.Name = "textBoxDateStart";
+            this.textBoxDateStart.Size = new System.Drawing.Size(98, 26);
+            this.textBoxDateStart.TabIndex = 31;
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(90, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 19);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Дата:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(259, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 19);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "ПО:";
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(89, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 19);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Вариант отчета:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(137, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 19);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "С:";
+            // 
+            // buttonExecFilter
+            // 
+            this.buttonExecFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExecFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonExecFilter.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonExecFilter.Location = new System.Drawing.Point(406, 22);
+            this.buttonExecFilter.Name = "buttonExecFilter";
+            this.buttonExecFilter.Size = new System.Drawing.Size(92, 39);
+            this.buttonExecFilter.TabIndex = 28;
+            this.buttonExecFilter.Text = "Применить фильтры";
+            this.buttonExecFilter.UseVisualStyleBackColor = true;
+            // 
+            // buttonClearFilter
+            // 
+            this.buttonClearFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonClearFilter.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClearFilter.Location = new System.Drawing.Point(406, 68);
+            this.buttonClearFilter.Name = "buttonClearFilter";
+            this.buttonClearFilter.Size = new System.Drawing.Size(92, 39);
+            this.buttonClearFilter.TabIndex = 27;
+            this.buttonClearFilter.Text = "Сбросить фильтры";
+            this.buttonClearFilter.UseVisualStyleBackColor = true;
+            this.buttonClearFilter.Click += new System.EventHandler(this.buttonClearFilter_Click);
             // 
             // FormAnalyze
             // 
