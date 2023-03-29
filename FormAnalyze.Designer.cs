@@ -45,7 +45,6 @@
             this.textBoxDateStart = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonExecFilter = new System.Windows.Forms.Button();
             this.buttonClearFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,6 +62,7 @@
             this.buttonCreateReport.TabIndex = 7;
             this.buttonCreateReport.Text = "Сформировать отчет";
             this.buttonCreateReport.UseVisualStyleBackColor = true;
+            this.buttonCreateReport.Click += new System.EventHandler(this.buttonCreateReport_Click);
             // 
             // dataGridView1
             // 
@@ -149,7 +149,6 @@
             this.panel2.Controls.Add(this.textBoxDateStart);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.buttonExecFilter);
             this.panel2.Controls.Add(this.buttonClearFilter);
             this.panel2.Location = new System.Drawing.Point(9, 12);
             this.panel2.Name = "panel2";
@@ -232,24 +231,12 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "С:";
             // 
-            // buttonExecFilter
-            // 
-            this.buttonExecFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExecFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonExecFilter.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExecFilter.Location = new System.Drawing.Point(406, 22);
-            this.buttonExecFilter.Name = "buttonExecFilter";
-            this.buttonExecFilter.Size = new System.Drawing.Size(92, 39);
-            this.buttonExecFilter.TabIndex = 28;
-            this.buttonExecFilter.Text = "Применить фильтры";
-            this.buttonExecFilter.UseVisualStyleBackColor = true;
-            // 
             // buttonClearFilter
             // 
             this.buttonClearFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClearFilter.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClearFilter.Location = new System.Drawing.Point(406, 68);
+            this.buttonClearFilter.Location = new System.Drawing.Point(406, 43);
             this.buttonClearFilter.Name = "buttonClearFilter";
             this.buttonClearFilter.Size = new System.Drawing.Size(92, 39);
             this.buttonClearFilter.TabIndex = 27;
@@ -292,7 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonExecFilter;
         private System.Windows.Forms.Button buttonClearFilter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
