@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,7 +115,10 @@ namespace TimeTrackerDesktop
                 //Пользователь - День
                 case 1:
                     sheet.Name = "Пользователь - Дата";
-                    int indexX = 1;
+                    int indexX = 2;
+                    sheet.Cells[1, 1] = "Пользователь";
+                    sheet.Cells[1, 2] = "Дата";
+                    sheet.Cells[1, 3] = "Время работы";
                     for (int i = 0; i < cellUsers.Count; i++)
                     {
                         string userlogin = cellUsers[i].Value.ToString();
@@ -125,7 +129,7 @@ namespace TimeTrackerDesktop
                             while (resultFunc.Read())
                             {
                                 sheet.Cells[indexX, 1] = resultFunc.GetValue(0).ToString();
-                                sheet.Cells[indexX, 2] = resultFunc.GetValue(1).ToString();
+                                sheet.Cells[indexX, 2] = resultFunc.GetValue(1).ToString().Split(' ')[0];
                                 sheet.Cells[indexX, 3] = resultFunc.GetValue(2).ToString();
                                 indexX++;
                             }
@@ -133,6 +137,34 @@ namespace TimeTrackerDesktop
                         }
                         
                     }
+                    sheet.Columns[1].ColumnWidth = 14;
+                    sheet.Columns[2].ColumnWidth = 10;
+                    sheet.Columns[3].ColumnWidth = 14;
+
+                    sheet.Cells.Font.Name = "Times New Roman";
+                    sheet.Cells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                    sheet.Cells.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+                    Excel.Chart excelchart = (Excel.Chart)app.Charts.Add(Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+                    excelchart.Activate();
+
+                    //Изменяем тип диаграммы
+                    //app.ActiveChart.ChartType = Excel.XlChartType.xlLineMarkers;
+
+                    //Перемещаем диаграмму на лист 1
+                    app.ActiveChart.Location(Excel.XlChartLocation.xlLocationAsObject, "Пользователь - Дата");
+                    //Получаем ссылку на лист 1
+                    var excelsheets = workBook.Worksheets;
+                    sheet = (Excel.Worksheet)excelsheets.get_Item(1);
+                    //Перемещаем диаграмму в нужное место
+                    sheet.Shapes.Item(1).IncrementTop(-300);
+                    sheet.Shapes.Item(1).IncrementLeft(-81);
+                    
+                    //Задаем размеры диаграммы
+                    //sheet.Shapes.Item(1).Height = 500;
+                    //sheet.Shapes.Item(1).Width = 500;
+
                     break;
                 default:
                     MessageBox.Show("Неизвестный вариант графика!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
