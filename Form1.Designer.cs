@@ -146,6 +146,7 @@
             this.Name = "FormAuth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Вход";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAuth_FormClosed);
             this.Load += new System.EventHandler(this.FormAuth_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

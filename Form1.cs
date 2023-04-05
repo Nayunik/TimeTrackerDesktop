@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTrackerDesktop.AuthClasses;
 using TimeTrackerDesktop.DataBase;
@@ -17,6 +10,9 @@ namespace TimeTrackerDesktop
         ClassDataBase dataBase = new ClassDataBase();
         private string configurationString = "Host = localhost; Port = 5432; Database = TimeTrackerDB; " +
             "Username = postgres; Password = 123456";
+        ClassUserAuht user;
+
+        DateTime startSession;
 
         public FormAuth()
         {
@@ -27,7 +23,7 @@ namespace TimeTrackerDesktop
         {
             string login = textBox1.Text;
             string password = textBox2.Text;
-            ClassUserAuht user = new ClassUserAuht(login, password, dataBase);
+            user = new ClassUserAuht(login, password, dataBase);
             
             if (user.UserId != -1)
             {
@@ -39,6 +35,7 @@ namespace TimeTrackerDesktop
                         FormTimeTracker formTime = new FormTimeTracker();
                         formTime.SetUser(user);
                         formTime.SetDB(dataBase);
+                        startSession = DateTime.Now;
                         formTime.ShowDialog();
                     }
                     else
@@ -79,6 +76,15 @@ namespace TimeTrackerDesktop
             reg.SetDB(dataBase);
             reg.ShowDialog();
             
+        }
+
+        private void FormAuth_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Занесение информации о сессии пользователя
+            if (user != null)
+            {
+                dataBase.ExecuteScript($"insert into auth.session (user_id, date_time_session_start, date_time_session_end) values({user.UserId}, to_timestamp('{startSession}', 'dd.mm.yyyy HH24:MI:SS'), to_timestamp('{DateTime.Now}', 'dd.mm.yyyy HH24:MI:SS'))");
+            }
         }
     }
 }

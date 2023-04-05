@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
 using Npgsql;
 
 namespace TimeTrackerDesktop.DataBase
@@ -70,8 +65,12 @@ namespace TimeTrackerDesktop.DataBase
         {
             if (!string.IsNullOrEmpty(nameOfFunction))
             {
-                var command = new NpgsqlCommand(nameOfFunction, this.connection);
-                command.ExecuteReader().Close();
+                try
+                {
+                    var command = new NpgsqlCommand(nameOfFunction, this.connection);
+                    command.ExecuteReader().Close();
+                }
+                catch (SystemException e) { MessageBox.Show($"Error:\r\n{e}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
         
