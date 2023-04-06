@@ -219,6 +219,10 @@ namespace TimeTrackerDesktop
             app.Quit();
             System.Runtime.InteropServices.Marshal.ReleaseComObject(app);
 
+            //Добавление инфы в БД по созданию отчета
+            
+            database.ExecuteScript($"\r\n--Добавление инфы об отчете\r\ninsert into main.report (create_user_id, date_formation, reportname)\r\nvalues ( {user.UserId}, to_timestamp('{DateTime.Now}', 'dd.mm.yyyy HH24:MI:SS'), '{nameRep}');");
+
             MessageBox.Show($"Отчет {nameRep} успешно сформирован!","Успех!", MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
