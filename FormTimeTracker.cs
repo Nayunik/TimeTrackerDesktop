@@ -64,9 +64,10 @@ namespace TimeTrackerDesktop
             {
                 buttonGoToFormAnalyze.Visible = false;
             }
-            if(!user.Roles.Contains(4))
+            if(!user.Roles.Contains(2))
             {
-                buttonGoToFormAnalyze.Visible = false;
+                MessageBox.Show("У вас нет роли для работы с таймером, обратитесь к администратору!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
 
             button1.Enabled = false;

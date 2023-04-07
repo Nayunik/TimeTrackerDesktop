@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTrackerDesktop.AuthClasses;
 using TimeTrackerDesktop.DataBase;
@@ -144,7 +137,8 @@ namespace TimeTrackerDesktop
 
                     }
                     var o = checkedListBox1.GetItemChecked(0);
-                    database.ExecuteScript("select auth.change_user_in_roles(" + checkedListBox1.GetItemChecked(0) + ", " + checkedListBox1.GetItemChecked(1) + ", " + checkedListBox1.GetItemChecked(2) + ", " + checkedListBox1.GetItemChecked(3) + ", " + user.UserId.ToString() + ")");
+                    database.ExecuteScript("select auth.change_user_in_roles(" + checkedListBox1.GetItemChecked(0) + ", " + checkedListBox1.GetItemChecked(1) + ", " + checkedListBox1.GetItemChecked(2) + ", false, " + user.UserId.ToString() + ")");
+                    database.ExecuteScript($"insert into main.change_log (event_time, user_id, change_user_id, event_type_id, event_object_id)\r\nvalues (to_timestamp('{DateTime.Now}', 'dd.mm.yyyy HH24:MI:SS'), {user.UserId}, {adminForm.user.UserId}, 2, 1);");
                 }
                 adminForm.UsersUpdateInfo();
 

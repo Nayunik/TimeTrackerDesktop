@@ -67,6 +67,7 @@ namespace TimeTrackerDesktop
             script += "\r\ninsert into main.\"user\" (firstname, lastname, middlename, phone, email) values(\'" + textBox7.Text.Trim() + "\',\'" + textBox8.Text.Trim() + "\', \'" + textBox4.Text.Trim() + "\', \'" + textBox5.Text.Trim() + "\', \'" + textBox6.Text.Trim() + "\');";
             script += "\r\ninsert into auth.user_in_role (user_id, role_id) values (v_iduser, 2);";
             script += "\r\ninsert into main.user_in_role (user_id, role_id) values (v_iduser, 2);";
+            script += $"\r\ninsert into main.change_log (event_time, user_id, change_user_id, event_type_id, event_object_id)\r\nvalues (to_timestamp('{DateTime.Now}', 'dd.mm.yyyy HH24:MI:SS'), v_iduser, 0, 1, 1);";
             script += "\r\nend;\r\n$$\r\n";
             if (!string.IsNullOrEmpty(script))
             {

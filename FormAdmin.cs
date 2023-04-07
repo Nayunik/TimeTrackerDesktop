@@ -7,7 +7,7 @@ namespace TimeTrackerDesktop
 {
     public partial class FormAdmin : Form
     {
-        private ClassUserAuht user;
+        public ClassUserAuht user;
         private ClassDataBase database;
 
         public FormAdmin()
@@ -94,12 +94,14 @@ namespace TimeTrackerDesktop
 
             if (!selectedUser.IsActive)
             {
-                database.ExecuteScript("select auth.block_user(" + selectedUser.UserId + ",false);");
+                database.ExecuteScript($"select auth.block_user({selectedUser.UserId},false);" +
+                    $"\r\ninsert into main.change_log (event_time, user_id, change_user_id, event_type_id, event_object_id)\r\nvalues (to_timestamp('{DateTime.Now}', 'dd.mm.yyyy HH24:MI:SS'), {selectedUser.UserId}, {user.UserId}, 4, 1);");
                 buttonBlockUser.Text = "Блокировать";
             }
             else
             {
-                database.ExecuteScript("select auth.block_user(" + selectedUser.UserId + ",true);");
+                database.ExecuteScript("select auth.block_user(" + selectedUser.UserId + ",true);" +
+                    $"\r\ninsert into main.change_log (event_time, user_id, change_user_id, event_type_id, event_object_id)\r\nvalues (to_timestamp('{DateTime.Now}', 'dd.mm.yyyy HH24:MI:SS'), {selectedUser.UserId}, {user.UserId}, 3, 1);");
                 buttonBlockUser.Text = "Разблокировать";
                 
             }

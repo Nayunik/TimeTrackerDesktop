@@ -101,8 +101,7 @@
             this.checkedListBox1.Items.AddRange(new object[] {
             "Администратор",
             "Право работать с таймером",
-            "Право составлять отчет",
-            "Право формировать график"});
+            "Право составлять отчет"});
             this.checkedListBox1.Location = new System.Drawing.Point(317, 279);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(250, 90);
